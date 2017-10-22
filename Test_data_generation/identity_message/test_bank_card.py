@@ -17,13 +17,11 @@ if len(message_list) == 6:
     card_bank = message_list[0] if message_list[0] else "None"  # 银行卡发卡行
     card_bank_custom_num = int(num) - 6
     card_bank_custom = functools.reduce(lambda x, y: 10 * x + y,
-                         [random.randint(1, card_bank_custom_num - 2) for x in range(card_bank_custom_num)])
+                                        [random.randint(1, card_bank_custom_num - 2)
+                                         for x in range(card_bank_custom_num)])
     bank_num = str(card_bin) + str(card_bank_custom)
-    print bank_num,card_bank
+    print bank_num, card_bank
 
 
 else:
     pass
-
-
-
