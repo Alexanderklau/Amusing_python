@@ -6,3 +6,7 @@ print random.randint(1, 10)
 # print random.choice(int(123))
 x = ['123','333','666']
 print '-'.join(x)
+
+from operator import mul
+print reduce(mul, range(1, 6))
+
