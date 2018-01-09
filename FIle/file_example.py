@@ -5,14 +5,17 @@ import logging
 import time
 from datetime import datetime
 from functools import wraps
+import time
+from multiprocessing import Pool
 
-Path = r"/home/lau/下载/"
+Path = r"/etc"
 
 
 
 #函数递归遍历目录
 
 def visitDir(arg, dirname, names):
+    print len(names)
     for filepath in names:
         filename = os.path.join(dirname, filepath)
         #文件名处理
