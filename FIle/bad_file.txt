@@ -1,1 +1,0 @@
-urces/app/apm/node_modules/npm/node_modules/readable-stream/node_modules/util-deprecate/Applications/Atom.app/Contents/Reso
