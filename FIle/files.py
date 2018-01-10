@@ -6,25 +6,12 @@ import time
 from datetime import datetime
 from functools import wraps
 
-Path = r"/home/lau/下载/"
+Path = r"/home/lau/下载"
 
-
-#计算时间
-def fn_timer(function):
-  @wraps(function)
-  def function_timer(*args, **kwargs):
-    t0 = time.time()
-    result = function(*args, **kwargs)
-    t1 = time.time()
-    print ("Total time running %s: %s seconds" %
-        (function.func_name, str(t1-t0))
-        )
-    return result
-  return function_timer
 
 #函数递归遍历目录
-@fn_timer
 def visitDir(arg, dirname, names):
+    t1 = time.time()
     for filepath in names:     
         filename = os.path.join(dirname, filepath)
         #文件名处理
@@ -34,14 +21,12 @@ def visitDir(arg, dirname, names):
 
 
 #文件名的处理，文件名内含有空格，括号，书名号等，不能直接调用dd，在对文件名处理后进行调用
-@fn_timer
 def filename_processing(filename):
     filename = filename.replace(" ", "\\ ").replace("(", "\\(").\
     replace(")", "\\)").replace("<", "\\<").replace(">", "\\>")
     return filename
 
 #读文件
-@fn_timer
 def read_file(filename):
     logging.basicConfig(filename='file.log', filemode="w", level=logging.DEBUG)
     if os.path.isdir(filename):

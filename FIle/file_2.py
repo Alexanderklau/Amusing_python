@@ -60,9 +60,9 @@ if __name__ == "__main__":
     print 'concurrent:'  # 创建多个进程，并行执行
     pool = multiprocessing.Pool(multiprocessing.cpu_count())  # 创建拥有5个进程数量的进程池
     # testFL:要处理的数据列表，run：处理testFL列表中数据的函数
-    rl = pool.apply_async(prints, scan_files("/Users"))
-    pool.close()  # 关闭进程池，不再接受新的进
-    pool.join()  # 主进程阻塞等待子进程的退出
+    rl = pool.map(prints, scan_files("/Users"))
+    # pool.close()  # 关闭进程池，不再接受新的进
+    # pool.join()  # 主进程阻塞等待子进程的退出
     e2 = time.time()
     print "并行执行时间：", int(e2 - e1)
 #print len(scan_files("/Users"))

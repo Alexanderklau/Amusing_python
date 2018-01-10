@@ -1,35 +1,53 @@
-import multiprocessing
-import sys
+#coding: utf-8
+
+import threading
+import time
+
+class MyThread(threading.Thread):
+
+    def actionA(self):
+
+        r_lcok.acquire()  #count=1
+        print(self.name,"gotA",time.ctime())
+        time.sleep(2)
+
+        r_lcok.acquire()  #count=2
+        print(self.name,"gotB",time.ctime())
+        time.sleep(1)
+
+        r_lcok.release()  #count=1
+        r_lcok.release()  #count=0
 
 
-def worker_with(lock, f):
-    with lock:
-        fs = open(f, 'a+')
-        n = 20
-        while n > 1:
-            fs.write("Lockd acquired via with\n")
-            n -= 1
-        fs.close()
+    def actionB(self):
 
+        r_lcok.acquire()  #count=1
+        print(self.name,"gotB",time.ctime())
+        time.sleep(2)
 
-def worker_no_with(lock, f):
-    lock.acquire()
-    try:
-        fs = open(f, 'a+')
-        n = 20
-        while n > 1:
-            fs.write("Lock acquired directly\n")
-            n -= 1
-        fs.close()
-    finally:
-        lock.release()
+        r_lcok.acquire()  #count=2
+        print(self.name,"gotA",time.ctime())
+        time.sleep(1)
 
+        r_lcok.release()  #count=1
+        r_lcok.release()  #count=0
 
-if __name__ == "__main__":
-    lock = multiprocessing.Lock()
-    f = "file.txt"
-    w = multiprocessing.Process(target=worker_with, args=(lock, f))
-    nw = multiprocessing.Process(target=worker_no_with, args=(lock, f))
-    w.start()
-    nw.start()
-    print "end"
+    def run(self):
+
+            self.actionA()
+            self.actionB()
+
+if __name__ == '__main__':
+
+    r_lcok=threading.RLock()
+    L=[]
+
+    for i in range(5):
+        t=MyThread()
+        t.start()
+        L.append(t)
+
+    for i in L:
+        i.join()
+
+    print("ending.....")
