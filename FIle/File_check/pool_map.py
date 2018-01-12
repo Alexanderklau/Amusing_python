@@ -4,43 +4,54 @@ import logging
 import commands
 from datetime import datetime
 import multiprocessing
+import Queue
+import fileinput
+
+Path = r"/infinity"
+logging.basicConfig(filename='file.log', filemode="w", level=logging.DEBUG)
 
 
-Path = r"/home/lau"
-
-
-# 写数据进程执行的代码:
-# def write():
-#  # lock.acquire()
-#  return [os.path.join(root,fn) for root,dirs,files in os.walk(Path) for fn in files]
-
-     # 写入队列
-     # q.put(filename,block=True,timeout=10)
- # lock.release()
-
-# 读数据进程执行的代码:
+#读文件
 def read(filename):
-            print 'Get %s from queue.' % filename
-            filenames = filename.replace(" ", "\\ ").replace("(", "\\(").replace(")", "\\)"). \
-                replace("<", "\\<").replace(">", "\\>")
-            logging.basicConfig(filename='file.log', filemode="w", level=logging.DEBUG)
-            file, output = commands.getstatusoutput('dd if=' + filenames)
-                # 如果返回值=0，说明文件可以正常读取,反之则否
-            if file == 0:
-                pass
-                #    #正确的文件可以不写入日志，可调整。
-                #    # logging.info('%s This is helath file!' % (filename))
-            else:
-                logging.warning("%s:%s:%s" % (datetime.now(), filenames, output))
+    print 'Get %s from queue.' % filename
+    f = open("file.txt", "a+")
+    f.write(filename + "\n")
+    f.close()
+    filenames = filename.replace(" ", "\\ ").replace("(", "\\(").replace(")", "\\)"). \
+        replace("<", "\\<").replace(">", "\\>")
+    file, output = commands.getstatusoutput('dd if=' + filenames)
+        # 如果返回值=0，说明文件可以正常读取,反之则否
+    if file == 0:
+        pass
+    else:
+        logging.warning("%s 错误！原因：%s" %(filenames,output))
+
+#进程操作
+def work(filename):
+    p = multiprocessing.Pool(4)
+    for i in filename:
+        p.apply_async(read, args=(i,))
+    p.close()
+    p.join()
+
+#检查日志，如果不存在就从头开始，如果存在就从上次断掉的地方开始
+def check_file():
+    if os.path.exists("file.txt"):
+        logging.info("读取日志文件.......")
+        f = open("file.txt")
+        data = [line.strip() for line in f]
+        data2 = [os.path.join(root,fn) for root,dirs,files in os.walk(Path) for fn in files]
+        filename = list(set(data) ^ set(data2))
+        work(filename)
+    else:
+        logging.info("日志文件不存在......")
+        filename = [os.path.join(root, fn) for root, dirs, files in os.walk(Path) for fn in files]
+        work(filename)
+
+
 
 if __name__=='__main__':
     t1 = time.time()
-    manager = multiprocessing.Manager()
-    filename = [os.path.join(root,fn) for root,dirs,files in os.walk(Path) for fn in files]
-    p = multiprocessing.Pool(3)
-    p.map(read, filename)
-    p.close()
-    p.join()
+    check_file()
     t2 = time.time()
-    print '时间 %d' %(int(t2-t1))
-    print '所有数据都已经读完'
+    logging.info("所有文件都已经读完，用时：%d"%(int(t2-t1)))
