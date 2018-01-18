@@ -10,7 +10,7 @@ def create_directory():
     dir = []
     f = open("Directory.txt", "r")
     for i in f.read():
-    return dir
+        return dir
 
 
 print(create_directory())
