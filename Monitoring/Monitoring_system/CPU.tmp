@@ -1,0 +1,10 @@
+mysql    18422 20.0  1.6 992612 136088 ?       Ssl  11:50   0:00 /usr/sbin/mysqld
+lau      12163 13.9 12.7 6858276 1026104 ?     Sl   09:25  20:09 /home/lau/下载/pycharm/jre64/bin/java -Xbootclasspath/a:/home/lau/下载/pycharm/lib/boot.jar -classpath /home/lau/下载/pycharm/lib/bootstrap.jar:/home/lau/下载/pycharm/lib/extensions.jar:/home/lau/下载/pycharm/lib/util.jar:/home/lau/下载/pycharm/lib/jdom.jar:/home/lau/下载/pycharm/lib/log4j.jar:/home/lau/下载/pycharm/lib/trove4j.jar:/home/lau/下载/pycharm/lib/jna.jar -Xms128m -Xmx750m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Dawt.useSystemAAFontSettings=lcd -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine -XX:ErrorFile=/home/lau/java_error_in_PYCHARM_%p.log -XX:HeapDumpPath=/home/lau/java_error_in_PYCHARM.hprof -Didea.paths.selector=PyCharm2017.3 -Djb.vmOptionsFile=/home/lau/下载/pycharm/bin/pycharm64.vmoptions -Didea.platform.prefix=Python com.intellij.idea.Main
+lau      32017  3.7  2.6 2830904 216552 ?      SLl  10:39   2:38 C:\Program Files\Tencent\QQ\Bin\QQ.exe /hosthwnd=65664 /hostname=QQ_IPC_{B3C2041C-1E6C-40CF-97DE-D62AC64292D8} /memoryid=0 C:\Program Files\Tencent\QQ\Bin\QQ.exe
+root      1401  3.2  2.0 837828 163888 tty7    Ssl+ 09:05   5:22 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+lau      31935  2.5  0.0   9216  6460 ?        Ss   10:39   1:48 /opt/cxoffice/bin/wineserver
+lau       2841  2.0  1.6 1582168 135688 ?      Ssl  09:05   3:19 compiz
+root      2949  0.2  0.0 367052  7984 ?        Ssl  09:05   0:20 /usr/lib/udisks2/udisksd --no-debug
+mongodb    992  0.2  0.5 388320 44832 ?        Ssl  09:05   0:23 /usr/bin/mongod --config /etc/mongodb.conf
+root       531  0.1  0.0      0     0 ?        S    09:05   0:12 [irq/30-iwlwifi]
+lau      31960  0.1  0.3 2692548 29848 ?       Sl   10:39   0:04 C:\Program Files\Common Files\Tencent\QQProtect\Bin\QQProtect.exe
