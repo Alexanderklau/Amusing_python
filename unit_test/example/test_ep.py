@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from mathfunc import add, minus, multi, divide
+from ep import add, minus, multi, divide
 
 
 class TestMathFunc(unittest.TestCase):
     """Test mathfuc.py"""
+
 
     def test_add(self):
         """Test method add(a, b)"""
@@ -24,6 +25,5 @@ class TestMathFunc(unittest.TestCase):
         """Test method divide(a, b)"""
         self.assertEqual(2, divide(6, 3))
         self.assertEqual(2.5, divide(5, 2))
-
 if __name__ == '__main__':
     unittest.main()
