@@ -8,9 +8,11 @@ import prettytable
 
 
 def check_cpu():
-    # 将CPU占用率前十的进程的详细信息写入CPU.tmp文件
-    # 这里需要写入临时文件，因为测试CPU占用的算法需要加上时限，Python去计算非常慢，所以用shell计算完
-    # 直接调用
+    """
+    将CPU占用率前十的进程的详细信息写入CPU.tmp文件
+    这里需要写入临时文件，因为测试CPU占用的算法需要加上时限，
+    Python去计算非常慢，所以用shell计算完直接调用
+    """
     os.popen('ps aux|head -1;ps aux|grep -v PID|sort -rn -k +3|head > CPU.tmp')
     # 读取TMP数据，将其规范，格式化
     with open('CPU.tmp', 'r') as f:
@@ -19,8 +21,8 @@ def check_cpu():
     dicts = {}
     for i in lines:
         # 用正则去规范化字符串
-        a = re.sub(' +', ',', i)
-        a = a.split(",")
+        lines_strs = re.sub(' +', ',', i)
+        a = lines_strs.split(",")
         # Pid为key， CPU占比为value
         dicts[a[1]] = a[2]
     # 添加列表
@@ -53,3 +55,5 @@ def check_memory():
         if i >= 9:
             break
     return str(table)
+
+print(check_memory())
