@@ -5,6 +5,8 @@ import os
 import re
 import psutil
 import prettytable
+import sys
+import getopt
 
 
 def check_cpu():
@@ -42,7 +44,7 @@ def check_cpu():
 
 def check_memory():
     """
-    这里不需要调用shell命令，python自带的功能可以去查询实时的内存占用,快，好用
+    这里不需要调用shell命令，Python自带的功能可以去查询实时的内存占用,快，好用
     """
     ps_result = list()
     for proc in psutil.process_iter():
@@ -56,4 +58,11 @@ def check_memory():
             break
     return str(table)
 
-print(check_memory())
+def check_process_thread():
+    """
+    带参数打印出process的线程，输入指定进程pid，输出线程,线程spid等。
+    输出存在一个tmp文件中
+    """
+
+
+
