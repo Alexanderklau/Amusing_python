@@ -6,18 +6,18 @@ import time
 import re
 import psutil
 import prettytable
-import datetime
 import logging
 
-
-logging.basicConfig(filename='example.log', level=logging.DEBUG,
+logging.basicConfig(filename='/var/log/monitoring.log', level=logging.DEBUG,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S')
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
 formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
 console.setFormatter(formatter)
-logging.getLogger('').addHandler(console)
+
+
+# logging.getLogger('').addHandler(console)
 
 
 def get_cpu():
@@ -39,6 +39,7 @@ def get_cpu():
         # Pid为key， CPU占比为value
         dicts[a[1]] = a[2]
     return dicts
+
 
 def check_cpu():
     # 添加列表
@@ -64,7 +65,6 @@ def check_memory():
     ps_result = list()
     for proc in psutil.process_iter():
         ps_result.append({'name': proc.name(), 'pid': proc.pid, 'memory_percent': proc.memory_percent()})
-    print(ps_result)
     table = prettytable.PrettyTable()
     table.field_names = ["No.", "Name", "Pid", "Memory percent"]
     for i, item in enumerate(sorted(ps_result, key=lambda x: x['memory_percent'], reverse=True)):
@@ -88,5 +88,5 @@ def run(interval):
 
 
 if __name__ == "__main__":
-    interval = 10
+    interval = 60
     run(interval)
