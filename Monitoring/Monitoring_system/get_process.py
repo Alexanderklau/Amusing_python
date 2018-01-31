@@ -38,6 +38,7 @@ def get_cpu():
         a = lines_strs.split(",")
         # Pid为key， CPU占比为value
         dicts[a[1]] = a[2]
+    os.remove('CPU.tmp')
     return dicts
 
 
@@ -74,8 +75,14 @@ def check_memory():
     return str(table)
 
 
+def check_process_threading(kid):
+    """
+    统计出进程的线程
+    """
+
+
 # 主函数
-def run(interval):
+def run_check(interval):
     while True:
         try:
             # 睡眠
@@ -89,4 +96,4 @@ def run(interval):
 
 if __name__ == "__main__":
     interval = 60
-    run(interval)
+    run_check(interval)

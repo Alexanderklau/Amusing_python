@@ -1,17 +1,13 @@
 # coding: utf-8
 __author__ = 'lau.wenbo'
 
-import sys, getopt
+
+import argparse
 
 
-opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
-input_file=""
-output_file=""
-for op, value in opts:
-    if op == "-i":
-        input_file = value
-    elif op == "-o":
-        output_file = value
-    elif op == "-h":
-        usage()
-        sys.exit()
+parser = argparse.ArgumentParser(description='manual to this script')
+parser.add_argument('--gpus', type=str, default = None)
+parser.add_argument('--batch-size', type=int, default=32)
+args = parser.parse_args()
+print args.gpus
+print args.batch_size
