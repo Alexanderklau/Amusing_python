@@ -25,7 +25,6 @@ def get_cpu_none():
     for i in lines:
         # 用正则去规范化字符串
         lines_strs = re.sub(' +', ',', i)
-        deal_str = re.sub("\\n")
         a = lines_strs.split(",")
         # Pid为key， CPU占比为value
         dicts[a[1]] = a[2]

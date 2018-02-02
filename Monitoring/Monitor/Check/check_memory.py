@@ -45,12 +45,12 @@ def get_memory_have(threshold):
     ps_result = list()
     for key, value in cpu_dict.items():
         p = psutil.Process(int(key))
-        ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=float(value)))
+        ps_result.append(dict(name=p.name(), pid=int(key), memory_percent=float(value)))
     # 排序，输出
     table = prettytable.PrettyTable()
     table.field_names = ["No.", "Name", "Pid", "Memory_percent"]
-    for i, item in enumerate(sorted(ps_result, key=lambda x: x['cpu_percent'], reverse=True)):
-        table.add_row([i + 1, item['name'], item['pid'], format(str(item['cpu_percent']) + "%")])
+    for i, item in enumerate(sorted(ps_result, key=lambda x: x['memory_percent'], reverse=True)):
+        table.add_row([i + 1, item['name'], item['pid'], format(str(item['memory_percent']) + "%")])
         if i >= 9:
             break
     return str(table)
