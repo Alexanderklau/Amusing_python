@@ -29,16 +29,19 @@ def process_have(cpu, memory):
     cpu_dicts = dicts
     ps_result = list()
     for key, value in cpu_dicts.items():
-        p = psutil.Process(int(key))
-        ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=value,
-                              memory_percent=p.memory_percent()))
+        try:
+            p = psutil.Process(int(key))
+            ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=value,
+                                  memory_percent=p.memory_percent()))
+        except:
+            pass
     # 排序，输出
     table = prettytable.PrettyTable()
     table.field_names = ["No.", "Name", "Pid", "Cpu_percent", "Memory_percent"]
     for i, item in enumerate(sorted(ps_result, key=lambda x: x['cpu_percent'], reverse=True)):
         table.add_row(
-            [i + 1, item['name'], item['pid'], format(str(item['cpu_percent']) + "%"), format(item['memory_percent'] / 100, '.2%')])
+            [i + 1, item['name'], item['pid'], format(str(item['cpu_percent']) + "%"),
+             format(item['memory_percent'] / 100, '.2%')])
         if i >= 9:
             break
     return str(table)
-

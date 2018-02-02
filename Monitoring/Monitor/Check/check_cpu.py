@@ -48,8 +48,8 @@ def get_cpu_have(threshold):
     有阈值， 使用阈值的数值去判断.
     读取瞬时所有的cpu进程， 写入到tmp文件，根据阈值去判断，最后输出
     """
-    os.popen('ps aux|head -1;ps aux|grep -v PID|sort -rn -k +3 > CPU.tmp')
-    with open('CPU.tmp', 'r') as f:
+    os.popen('ps aux|head -1;ps aux|grep -v PID|sort -rn -k +3 > CPU2.tmp')
+    with open('CPU2.tmp', 'r') as f:
         lines = f.readlines()
     # 将数据标准化，以dict格式输出
     dicts = {}
@@ -60,12 +60,15 @@ def get_cpu_have(threshold):
         # 如果超过阈值，写入字典待用
         if float(a[2]) >= threshold:
             dicts[a[1]] = a[2]
-    os.remove('CPU.tmp')
+    os.remove('CPU2.tmp')
     cpu_dicts = dicts
     ps_result = list()
-    for key, value in cpu_dicts.items():
-        p = psutil.Process(int(key))
-        ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=float(value)))
+    try:
+        for key, value in cpu_dicts.items():
+            p = psutil.Process(int(key))
+            ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=float(value)))
+    except:
+        pass
     # 排序，输出
     table = prettytable.PrettyTable()
     table.field_names = ["No.", "Name", "Pid", "Cpu_percent"]
@@ -74,4 +77,3 @@ def get_cpu_have(threshold):
         if i >= 9:
             break
     return str(table)
-

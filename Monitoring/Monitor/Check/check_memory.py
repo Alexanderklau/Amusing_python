@@ -43,9 +43,12 @@ def get_memory_have(threshold):
     os.remove('memory.tmp')
     cpu_dict = dicts
     ps_result = list()
-    for key, value in cpu_dict.items():
-        p = psutil.Process(int(key))
-        ps_result.append(dict(name=p.name(), pid=int(key), memory_percent=float(value)))
+    try:
+        for key, value in cpu_dict.items():
+            p = psutil.Process(int(key))
+            ps_result.append(dict(name=p.name(), pid=int(key), memory_percent=float(value)))
+    except:
+        pass
     # 排序，输出
     table = prettytable.PrettyTable()
     table.field_names = ["No.", "Name", "Pid", "Memory_percent"]
