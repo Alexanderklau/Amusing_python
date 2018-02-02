@@ -12,7 +12,6 @@ import json
 import time
 
 
-# def run_o
 
 if __name__ == "__main__":
         print("#" * 30)

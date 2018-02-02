@@ -2,15 +2,8 @@
 __author__ = 'lau.wenbo'
 
 import json
+import sys
 
-
-def preview():
-    with open("./Monitor/setting.json", "r") as load_f:
-        load_dict = json.load(load_f)
-    print("配置详情")
-    print("1.CPU阀值:{0}\n"
-          "2.内存阀值:{1}\n"
-          "3.检测时间:{2}".format(load_dict["CPU_max"],load_dict["Memory_max"],load_dict["time"]))
 
 def revise():
     print("修改哪一项?")
@@ -48,8 +41,10 @@ def revise():
             load_dict["time"] = str
             print("修改成功！")
             print("返回上一步.........")
+    elif str == "4":
+        sys.exit()
     else:
-        print("fuck")
+        print("错误的输入")
     a = load_dict
 
     with open("../Monitor/setting.json", "wb") as f:
