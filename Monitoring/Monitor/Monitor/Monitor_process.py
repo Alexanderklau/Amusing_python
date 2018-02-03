@@ -16,17 +16,12 @@ import json
 import time
 
 
-f = open("setting.json", "r")
+f = open("/Monitor/setting.json", "r")
 setting = json.load(f)
 cpu_max = float(setting["CPU_max"])
 memeory_max = float(setting["Memory_max"])
 check_time = setting["time"]
 
-f = open("setting.json", "r")
-setting = json.load(f)
-cpu_max = float(setting["CPU_max"])
-memeory_max = float(setting["Memory_max"])
-check_time = setting["time"]
 
 
 def run_process_have():

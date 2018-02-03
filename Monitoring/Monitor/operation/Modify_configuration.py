@@ -48,7 +48,7 @@ def revise():
             print("错误的输入")
         a = load_dict
 
-        with open("../Monitor/setting.json", "wb") as f:
+        with open("./Monitor/setting.json", "wb") as f:
             data = json.dump(a, f)
 
 

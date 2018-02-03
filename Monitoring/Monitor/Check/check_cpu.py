@@ -32,8 +32,11 @@ def get_cpu_none():
     cpu_dicts = dicts
     ps_result = list()
     for key, value in cpu_dicts.items():
-        p = psutil.Process(int(key))
-        ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=float(value)))
+        try:
+            p = psutil.Process(int(key))
+            ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=float(value)))
+        except:
+            pass
     # 排序，输出
     table = prettytable.PrettyTable()
     table.field_names = ["No.", "Name", "Pid", "Cpu_percent"]
