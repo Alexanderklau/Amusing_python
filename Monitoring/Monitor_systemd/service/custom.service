@@ -1,0 +1,14 @@
+[Unit]
+Description=details daemon
+After=rc-local.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home
+ExecStart=/usr/bin/python /media/lau/datas/home/lau/Code/Amusing_python/unit_test/Monitor_systemd/details/acquisition.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
