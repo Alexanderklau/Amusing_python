@@ -40,15 +40,18 @@ def process_have(cpu, memory):
         except:
             pass
     # 排序，输出
-    table = prettytable.PrettyTable()
-    table.field_names = ["No.", "Name", "Pid", "Cpu_percent", "Memory_percent"]
-    for i, item in enumerate(sorted(ps_result, key=lambda x: x['cpu_percent'], reverse=True)):
-        table.add_row(
-            [i + 1, item['name'], item['pid'], format(str(item['cpu_percent']) + "%"),
-             format(item['memory_percent'] / 100, '.2%')])
-        if i >= 9:
-            break
-    return str(table)
+    if len(ps_result) == 0:
+        return "没有符合要求的进程！"
+    else:
+        table = prettytable.PrettyTable()
+        table.field_names = ["No.", "Name", "Pid", "Cpu_percent", "Memory_percent"]
+        for i, item in enumerate(sorted(ps_result, key=lambda x: x['cpu_percent'], reverse=True)):
+            table.add_row(
+                [i + 1, item['name'], item['pid'], format(str(item['cpu_percent']) + "%"),
+                 format(item['memory_percent'] / 100, '.2%')])
+            if i >= 9:
+                break
+        return str(table)
 
 if __name__ == "__main__":
     log = Log("自定义检测")
@@ -61,7 +64,7 @@ if __name__ == "__main__":
         try:
             # 睡眠
             time_remaining = check_time - time.time() % check_time
-            log.info("\nCPU占用详情\n" + process_have(cpu_max,memeory_max))
+            log.info("\n进程占用详情\n" + process_have(cpu_max,memeory_max))
             time.sleep(time_remaining)
         except Exception, e:
             print e
