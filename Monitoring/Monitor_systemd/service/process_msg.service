@@ -6,8 +6,8 @@ After=rc-local.service
 Type=simple
 User=root
 Group=root
-WorkingDirectory=/home
-ExecStart=/usr/bin/python /media/lau/datas/home/lau/Code/Amusing_python/unit_test/Monitor_systemd/details/acquisition.py
+WorkingDirectory=/opt
+ExecStart=/usr/bin/python /Monitor_systemd/process_msg/process_msg.py
 Restart=always
 
 [Install]

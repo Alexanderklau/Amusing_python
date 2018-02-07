@@ -13,7 +13,7 @@ rq = time.strftime('%Y%m%d', time.localtime(time.time()))
 class Log(object):
       '''日志类 '''
       def __init__(self, name):
-            self.path = "/media/lau/datas/home/lau/log/"  # 定义日志存放路径
+            self.path = "/var/log/infinity/custom"  # 定义日志存放路径
             self.filename = self.path + rq + "_custom_monitor" + ".log"    # 日志文件名称
             self.name = name    # 为%(name)s赋值
             self.logger = logging.getLogger(self.name)
