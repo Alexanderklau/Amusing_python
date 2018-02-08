@@ -9,3 +9,20 @@
 （2）日志问题：日志分为三份，存在/var/log/infinity/下的三个独立文件夹内，
 保存七天，然后删除
 使用手册:
+以root权限执行sh文件,
+在home下会生成一个json配置文件,setting.json，在那里去修改自己定义的值
+例子如下：
+{"CPU_max": 20, "Memory_max": 20, "time": 30, "process": "java"}
+终端执行 customstart， 程序会自己去访问json配置文件，并且根据配置文件，每30s，监控cpu大于等于20,内存大于等于20的程序，写入日志
+终端执行 customstop， 程序会杀死自己
+
+终端执行detailstart，程序会默认去监控服务器下所有的程序，将内存占用前十的程序输出，默认每60s打印一次
+终端执行detailstop， 程序会杀死自己
+
+终端执行processstart，程序会去找到json配置文件中你定义的进程名process，例如
+{"CPU_max": 20, "Memory_max": 20, "time": 30, "process": "java"}
+这里定义了一个process名为java，时间是30s监控一次
+
+
+终端执行processstop，程序杀死自己
+

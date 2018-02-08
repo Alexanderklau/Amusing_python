@@ -7,7 +7,7 @@ Type=simple
 User=root
 Group=root
 WorkingDirectory=/opt
-ExecStart=/usr/bin/python /Monitor_systemd/details/acquisition.py
+ExecStart=python /Monitor_systemd/details/acquisition.py
 Restart=always
 
 [Install]

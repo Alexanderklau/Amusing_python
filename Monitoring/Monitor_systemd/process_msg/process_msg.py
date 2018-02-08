@@ -9,6 +9,7 @@ import prettytable
 import os
 import re
 import json
+import time
 
 
 def get_process(name):
@@ -66,12 +67,15 @@ if __name__ == "__main__":
     f = open("../setting/setting.json", "r")
     setting = json.load(f)
     process_name = setting["process"]
+    check_time = setting["time"]
     log = Log("Process_message")
     while True:
         try:
             pid = get_process(process_name)
             for p in pid:
+                time_remaining = check_time - time.time() % check_time
                 log.info("\n进程的线程\n" + check_process_thread(p) + "\n进程占用内存\n" + check_process_memory(p))
+                time.sleep(time_remaining)
         except Exception, e:
             log.error(e)
             break

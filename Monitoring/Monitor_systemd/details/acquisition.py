@@ -66,7 +66,7 @@ def get_memory_none():
 
 
 if __name__ == "__main__":
-    check_time = 10
+    check_time = 60
     log = Log("get_cpu_memory")
     while True:
         try:
