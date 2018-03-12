@@ -1,11 +1,13 @@
 # coding: utf-8
 __author__ = 'lau.wenbo'
-# 两种情况，一种有阀值，一种没有，所以分为两种方式去检查CPU
+
 
 import os
 import re
 import psutil
 import prettytable
+import time
+from log import Log
 
 
 
@@ -46,37 +48,30 @@ def get_cpu_none():
             break
     return str(table)
 
-def get_cpu_have(threshold):
+
+def get_memory_none():
     """
-    有阈值， 使用阈值的数值去判断.
-    读取瞬时所有的cpu进程， 写入到tmp文件，根据阈值去判断，最后输出
-    """
-    os.popen('ps aux|head -1;ps aux|grep -v PID|sort -rn -k +3 > CPU2.tmp')
-    with open('CPU2.tmp', 'r') as f:
-        lines = f.readlines()
-    # 将数据标准化，以dict格式输出
-    dicts = {}
-    for i in lines:
-        # 用正则去规范化字符串
-        lines_strs = re.sub(' +', ',', i)
-        a = lines_strs.split(",")
-        # 如果超过阈值，写入字典待用
-        if float(a[2]) >= threshold:
-            dicts[a[1]] = a[2]
-    os.remove('CPU2.tmp')
-    cpu_dicts = dicts
+        这里不需要调用shell命令，Python自带的功能可以去查询实时的内存占用,快，好用
+        """
     ps_result = list()
-    try:
-        for key, value in cpu_dicts.items():
-            p = psutil.Process(int(key))
-            ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=float(value)))
-    except:
-        pass
-    # 排序，输出
+    for proc in psutil.process_iter():
+        ps_result.append(dict(name=proc.name(), pid=proc.pid, memory_percent=proc.memory_percent()))
     table = prettytable.PrettyTable()
-    table.field_names = ["No.", "Name", "Pid", "Cpu_percent"]
-    for i, item in enumerate(sorted(ps_result, key=lambda x: x['cpu_percent'], reverse=True)):
-        table.add_row([i + 1, item['name'], item['pid'], format(str(item['cpu_percent']) + "%")])
+    table.field_names = ["No.", "Name", "Pid", "Memory percent"]
+    for i, item in enumerate(sorted(ps_result, key=lambda x: x['memory_percent'], reverse=True)):
+        table.add_row([i + 1, item['name'], item['pid'], format(item['memory_percent'] / 100, '.2%')])
         if i >= 9:
             break
     return str(table)
+
+
+if __name__ == "__main__":
+    check_time = 60
+    log = Log("get_cpu_memory")
+    while True:
+        try:
+            time_remaining = check_time - time.time() % check_time
+            log.info("\nCPU占用详情\n" + get_cpu_none() + "\n内存占用详情\n" + get_memory_none())
+            time.sleep(time_remaining)
+        except Exception, e:
+            log.error(e)

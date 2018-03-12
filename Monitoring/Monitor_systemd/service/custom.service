@@ -1,0 +1,14 @@
+[Unit]
+Description=details daemon
+After=rc-local.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt
+ExecStart=python /Monitor_systemd/custom/custom.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

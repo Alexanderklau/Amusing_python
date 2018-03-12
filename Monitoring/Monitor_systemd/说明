@@ -1,0 +1,26 @@
+使用手册
+系统功能：实时，或者自定义监控进程
+如何使用：
+执行.sh文件去安装，安装完毕后，会有三个命令和一个配置文件生成，执行相应的命令，可以监控对应的服务。
+命令说明：
+
+
+"customstart" : 开始自定义监控任务。开启后会主动去找setting.json这个文件，这个文件在/opt下，用例如下：
+{"CPU_max": 20, "Memory_max": 20, "time": 30, "process": "java"}
+解释：开始监控内存大于等于20,CPU大于等于20的程序，每隔30s刷新一次,写入/var/log/custom文件夹下的log中。process在这里无用。
+如果需要修改配置，直接修改json文件就可以，修改过后自动生效
+
+"customstop"  : 停止监控，退出程序
+
+
+"detailstart" : 默认去监控CPU，内存占比前十的进程，输入到日志中，每60s刷新一次。写入/var/log/detail下的log中
+
+"detailstop"  : 终止监控
+
+
+"processstart" : 监控指定进程，用例：
+{"CPU_max": 20, "Memory_max": 20, "time": 30, "process": "java"}
+解释：process是指定的进程，输入进程名java，监控进程java，每30s刷新一次，写入/var/log/process文件夹下的log中
+CPU和Memory在这里无用。
+
+"processstop" : 终止监控
