@@ -54,11 +54,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set_spider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="set_spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider_simple/set_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+              <folding>
+                <element signature="e#45#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ladyer_spider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Spider_simple/ladyer_spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding>
                 <element signature="e#45#60#0" expanded="true" />
               </folding>
@@ -84,6 +96,7 @@
         <option value="$PROJECT_DIR$/Spider_simple/first_spider.py" />
         <option value="$PROJECT_DIR$/Spider_simple/check_spider.py" />
         <option value="$PROJECT_DIR$/Spider_simple/set_spider.py" />
+        <option value="$PROJECT_DIR$/Spider_simple/ladyer_spider.py" />
       </list>
     </option>
   </component>
@@ -396,8 +409,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Spider_simple/set_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="e#45#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spider_simple/ladyer_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
           <folding>
             <element signature="e#45#60#0" expanded="true" />
           </folding>

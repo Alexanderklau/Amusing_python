@@ -19,4 +19,4 @@ def getLinks(pageUrl):
             pages.add(newPage)
             getLinks(newPage)
 
-getLinks("ls")
+getLinks("")
