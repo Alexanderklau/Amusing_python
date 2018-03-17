@@ -15,7 +15,7 @@ def get_jpg():
 def check_headers():
     pass
 
-def save_jps():
+def save_jpg():
     pass
 
 def thread_Download():
