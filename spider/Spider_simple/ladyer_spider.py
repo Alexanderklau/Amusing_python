@@ -4,6 +4,7 @@ __author__ = "Yemilice_lau"
 
 import requests
 import time
+from lxml import etree
 
 
 def get_link():
