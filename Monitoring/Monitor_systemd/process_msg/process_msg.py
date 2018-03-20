@@ -67,7 +67,7 @@ if __name__ == "__main__":
     f = open("../setting/setting.json", "r")
     setting = json.load(f)
     process_name = setting["process"]
-    check_time = setting["time"]
+    check_time = setting["process_time"]
     log = Log("Process_message")
     while True:
         try:
@@ -75,6 +75,7 @@ if __name__ == "__main__":
             for p in pid:
                 time_remaining = check_time - time.time() % check_time
                 log.info("\n进程的线程\n" + check_process_thread(p) + "\n进程占用内存\n" + check_process_memory(p))
+                log.close()
                 time.sleep(time_remaining)
         except Exception, e:
             log.error(e)

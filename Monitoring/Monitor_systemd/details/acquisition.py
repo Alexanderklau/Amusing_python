@@ -72,6 +72,7 @@ if __name__ == "__main__":
         try:
             time_remaining = check_time - time.time() % check_time
             log.info("\nCPU占用详情\n" + get_cpu_none() + "\n内存占用详情\n" + get_memory_none())
+            log.close()
             time.sleep(time_remaining)
         except Exception, e:
             log.error(e)

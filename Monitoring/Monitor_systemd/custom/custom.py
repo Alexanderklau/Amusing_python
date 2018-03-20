@@ -65,6 +65,7 @@ if __name__ == "__main__":
             # 睡眠
             time_remaining = check_time - time.time() % check_time
             log.info("\n进程占用详情\n" + process_have(cpu_max,memeory_max))
+            log.close()
             time.sleep(time_remaining)
         except Exception, e:
             print e

@@ -7,13 +7,11 @@ import multiprocessing
 
 
 # 规定目录
-Path = "/infinityfs1"
+Path = "/infinity"
 # 日志文件
-logging.basicConfig(filename="file.log", filemode="a+", level=logging.DEBUG)
+logging.basicConfig(filename="file.log", filemode="w", level=logging.DEBUG)
 # 断点文件
 file_name = "file.tmp"
-# 成功文件
-success_file = "success.tmp"
 # 读文件函数，调取C语言写的动态库
 def read(filename):
     print 'Get %s from queue.' % filename
@@ -27,31 +25,23 @@ def read(filename):
     file = lib.rd(filename)
     # 如果文件损坏 or 不存在
     if file < 0:
-        logging.warning("%s Error!" % (filename))
+        logging.warning("%s 错误!" % (filename))
     else:
-        success_files = open(success_file, "a+")
-        success_files.write(filename + "\n")
-        success_files.close()
+        print(file)
 
 
 def work(filename):
     # 开启10个进程
     p = multiprocessing.Pool(11)
-    try:
-       for i in filename:
-           p.apply_async(read, args=(i,)).get(30)
-       p.close()
-       p.join()
-    except KeyboardInterrupt:
-       print "Caught KeyboardInterrupt, terminating workers"
-       p.terminate()
-       p.join()
+    for i in filename:
+        p.apply_async(read, args=(i,))
+    p.close()
+    p.join()
 
 def check_file():
     # 读取文件
-    now_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     if os.path.exists(file_name):
-        logging.info("Reload file log.....Now time: {0}".format(now_time))
+        logging.info("读取日志文件.......")
         f = open(file_name)
         data = [line.strip() for line in f]
         data2 = [os.path.join(root,fn) for root,dirs,files in os.walk(Path)
@@ -60,7 +50,7 @@ def check_file():
         filename = list(set(data) ^ set(data2))
         work(filename)
     else:
-        logging.info("File log Not found....Now time:{0}".format(now_time))
+        logging.info("日志文件不存在......")
         filename = [os.path.join(root, fn) for root, dirs, files in os.walk(Path) for fn in files]
         work(filename)
 
@@ -71,6 +61,4 @@ if __name__=='__main__':
     # 删除txt文件
     if os.path.exists(file_name):
         os.remove(file_name)
-    if os.path.exists(success_file):
-        os.remove(success_file)
     logging.info("所有文件都已经读完，用时：%d"%(int(t2-t1)))

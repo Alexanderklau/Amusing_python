@@ -1,0 +1,8 @@
+/home/lau/datrixb.sql
+/home/lau/.mysql_history
+/home/lau/.php_historyb
+/home/lau/.wget-hstsb
+/home/lau/.bashrcb
+/home/lau/.gitconfigb
+/home/lau/.mycli-history
+/home/lau/java_error_in_PYCHARM.hprof
