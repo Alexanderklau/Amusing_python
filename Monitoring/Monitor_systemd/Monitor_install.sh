@@ -1,7 +1,7 @@
 tar xvf ./Monitoring.tar.gz -C /opt
-pip install psutil
-pip install prettytable
 cd /opt/Monitoring
+rpm -ivh /package/python2-psutil-5.4.3-4.fc28.x86_64.rpm
+rpm -ivh /package/python-prettytable-0.7.2-11.fc27.noarch.rpm
 ln -s /setting/setting.json /opt/setting.json
 cp /service/custom.service /etc/systemd/system/
 cp /service/details.service /etc/systemd/system/

@@ -51,11 +51,12 @@ def process_have(cpu, memory):
                  format(item['memory_percent'] / 100, '.2%')])
             if i >= 9:
                 break
+        print table
         return str(table)
 
 if __name__ == "__main__":
     log = Log("自定义检测")
-    f = open("../setting/setting.json", "r")
+    f = open("/opt/Monitoring/setting/setting.json", "r")
     setting = json.load(f)
     cpu_max = float(setting["CPU_max"])
     memeory_max = float(setting["Memory_max"])
@@ -65,7 +66,7 @@ if __name__ == "__main__":
             # 睡眠
             time_remaining = check_time - time.time() % check_time
             log.info("\n进程占用详情\n" + process_have(cpu_max,memeory_max))
-            log.close()
             time.sleep(time_remaining)
         except Exception, e:
             print e
+

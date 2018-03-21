@@ -16,7 +16,6 @@ def get_process(name):
     dicts = {}
     try:
         pid_list = map(int,check_output(["pidof",name]).split())
-        # print(pid_list)
         for pid in pid_list:
             dicts[pid] = name
         return dicts
@@ -64,19 +63,18 @@ def check_process_thread(pid):
     return str(table)
 
 if __name__ == "__main__":
-    f = open("../setting/setting.json", "r")
+    log = Log("定点检测")
+    f = open("/opt/Monitoring/setting/setting.json", "r")
     setting = json.load(f)
     process_name = setting["process"]
     check_time = setting["process_time"]
-    log = Log("Process_message")
     while True:
         try:
             pid = get_process(process_name)
-            for p in pid:
-                time_remaining = check_time - time.time() % check_time
-                log.info("\n进程的线程\n" + check_process_thread(p) + "\n进程占用内存\n" + check_process_memory(p))
-                log.close()
-                time.sleep(time_remaining)
+            time_remaining = check_time - time.time() % check_time
+            for key, value in pid.items():
+                log.info("\n进程占用内存\n" + check_process_memory(key))
+            time.sleep(time_remaining)
         except Exception, e:
             log.error(e)
             break
