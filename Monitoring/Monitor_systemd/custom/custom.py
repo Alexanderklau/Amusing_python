@@ -37,6 +37,7 @@ def process_have(cpu, memory):
             p = psutil.Process(int(key))
             ps_result.append(dict(name=p.name(), pid=int(key), cpu_percent=value,
                                   memory_percent=p.memory_percent()))
+            print(ps_result)
         except:
             pass
     # 排序，输出
@@ -51,22 +52,24 @@ def process_have(cpu, memory):
                  format(item['memory_percent'] / 100, '.2%')])
             if i >= 9:
                 break
-        print table
+        # print table
         return str(table)
 
 if __name__ == "__main__":
-    log = Log("自定义检测")
-    f = open("/opt/Monitoring/setting/setting.json", "r")
+    # log = Log("自定义检测")
+    f = open("../setting/setting.json", "r")
     setting = json.load(f)
     cpu_max = float(setting["CPU_max"])
     memeory_max = float(setting["Memory_max"])
     check_time = setting["time"]
-    while True:
-        try:
-            # 睡眠
-            time_remaining = check_time - time.time() % check_time
-            log.info("\n进程占用详情\n" + process_have(cpu_max,memeory_max))
-            time.sleep(time_remaining)
-        except Exception, e:
-            print e
+    print process_have(cpu_max, memeory_max)
+
+    # while True:
+    #     try:
+    #         # 睡眠
+    #         time_remaining = check_time - time.time() % check_time
+    #         log.info("\n进程占用详情\n" + process_have(cpu_max,memeory_max))
+    #         time.sleep(time_remaining)
+    #     except Exception, e:
+    #         print e
 

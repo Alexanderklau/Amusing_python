@@ -1,21 +1,20 @@
 # coding: utf-8
 __author__ = 'lau.wenbo'
 
-import time
+import socket, sys
 
-# 打开文件
-def read_file():
-    try:
-        fo = open("/media/lau/datas/home/lau/我的资源/炊事班的故事1/01.flv", "r")
-        for line in fo.readlines():  # 依次读取每行
-            lines = line.strip()  # 去掉每行头尾空白
-            print(lines)
-            fo.close()
-            return 0
-    # 关闭文件
-    except:
-        return -1
+port = 233
+host = "127.0.0.1"
+filename = sys.argv[1]
 
 
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((host, port))
 
-read_file()
+s.sendall(filename + "\r\n")
+
+while 1:
+    buf = s.recv(2048)
+    if not len(buf):
+        break
+    sys.stdout.write(buf)
