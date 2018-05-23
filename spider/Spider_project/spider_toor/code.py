@@ -4,6 +4,7 @@ __author__ = "Yemilice_lau"
 
 import requests
 import time
+from lxml import etree
 import json
 
 url = "http://b.jowong.com/createimage?Rgb=255|0|0"
@@ -25,17 +26,29 @@ with open('code.jpg', 'wb') as f:
 print('请输入验证码:')
 yanzhen = input()
 
-data = "password=######&random={0}&url=%2Fprovider%2Fticket%2Findex.do&usid=######".format((yanzhen))
+data = "password=321654&random={0}&url=%2Fprovider%2Fticket%2Findex.do&usid=scctkj".format((yanzhen))
 
 s.post(login_url, data=data, headers=headers)
+
 
 while True:
 
     time.sleep(1)
 
-    f = s.get("http://b.jowong.com/provider/ticket/ticketsearch.do?pdno=06001&rzti=2018-05-02&r=54")
+
+    f = s.get("http://b.jowong.com/provider/ticket/ticketsearch.do?pdno=06001&rzti=2018-05-02&r=880")
 
     print(f.text)
+
+    # print(s.cookies)
+
+    # print(f.text)
+
+    # add_user = "http://b.jowong.com/team/excelUpload.do?bznote=bab467bd21df48caaf9869cdd1aab7d6"
+    #
+    # a = s.post(add_user)
+    #
+    # print(a.text)
 
 
 

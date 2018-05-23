@@ -8,6 +8,7 @@ import psutil
 import prettytable
 import time
 from log import Log
+import commands
 
 
 
@@ -48,6 +49,15 @@ def get_cpu_none():
             break
     return str(table)
 
+def get_mastat():
+    a = commands.getstatusoutput('mpstat -P ALL 1 1')
+    return a[1]
+
+def get_zombie():
+    a = commands.getoutput('ps -a')
+    if a:return a
+    else:return "没有符合要求的进程"
+
 
 def get_memory_none():
     """
@@ -66,7 +76,8 @@ def get_memory_none():
 
 
 if __name__ == "__main__":
-    print get_memory_none()
+    x = get_zombie()
+    print(x)
     # log = Log("get_cpu_memory")
     # while True:
     #     try:
