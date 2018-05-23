@@ -6,6 +6,7 @@ import requests
 url = "http://b.jowong.com/login.do"
 
 payload = "password=321654&random=7366&url=%2Fprovider%2Fticket%2Findex.do&usid=scctkj"
+
 headers = {
     'Content-Type': "application/x-www-form-urlencoded",
     'Cache-Control': "no-cache",
