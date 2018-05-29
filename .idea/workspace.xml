@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0eba1872-960f-4ee6-ad87-99576b7bfbca" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spider/first_spider/spider.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Amusing_python.iml" afterPath="$PROJECT_DIR$/.idea/Amusing_python.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-=======
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_fork.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Thread_work/Tread_monintor_cpu/thread_run.py" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="8d7d54dd-39de-4ee6-8011-edfc3cb418aa" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Amusing_python.iml" afterPath="$PROJECT_DIR$/.idea/Amusing_python.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Proxy/proxy.py" afterPath="$PROJECT_DIR$/Proxy/proxy.py" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/analysis_file/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/analysis_file/read_conf_file/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/analysis_file/read_conf_file/read_conf_file.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/analysis_file/read_conf_file/read_conf_file1.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/analysis_file/read_conf_file/test.conf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/analysis_file/read_conf_file/test2.conf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/check_file/check-files使用手册.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/check_file/checkDiskBadSectors.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/check_file/checkDiskBadSectors.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/check_file/checkDiskBadSectors.tar.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/check_file/create_file.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/.idea/spider.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Practical/train_pickle/train_file.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/58_spider/camouflage.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/58_spider/deal_with_url.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/58_spider/get_message.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/58_spider/main.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/58_spider/storage.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/JD_spider/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/JD_spider/spider_main.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/spider_toor/get_ticket.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/spider_toor/login.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_project/spider_toor/piao.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_simple/check_spider.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_simple/first_spider.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_simple/ladyer_spider.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/Spider_simple/set_spider.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/easy_img/logo.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/first_spider/1.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/first_spider/get_data.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/first_spider/spider.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/first_spider/spider_test.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/first_spider/tt.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-binary.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-clearBorder.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-cutting-0.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-cutting-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-cutting-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-cutting-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-cutting-4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-interferencePoint.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/out_img/logo-interferenceline.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/1.xls" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/captcha-svm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/cnn_yanzheng.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/code_ya.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/get_excel.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/login.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/random_js.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/tt.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/valcode.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spider/ticket_tour/yanzheng_code.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/unit_test/example/ep.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/unit_test/example/test.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/unit_test/example/test_ep.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/unit_test/test_project/1.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,37 +75,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/Amusing_python$spider.coverage" NAME="spider Coverage Results" MODIFIED="1520863792400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider/first_spider" />
-=======
-    <SUITE FILE_PATH="coverage/Amusing_python$check_process.coverage" NAME="check_process Coverage Results" MODIFIED="1517666122778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Monitoring/Monitoring_system" />
-    <SUITE FILE_PATH="coverage/Amusing_python$get_cpu_top.coverage" NAME="get_cpu_top Coverage Results" MODIFIED="1517667223765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Monitoring/Monitor/operation" />
-    <SUITE FILE_PATH="coverage/Amusing_python$Unittests_in_Thread_run_test.coverage" NAME="Unittests in Thread_run_test Coverage Results" MODIFIED="1517733357601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thread_work/Thread_run_test" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-    <SUITE FILE_PATH="coverage/Amusing_python$files.coverage" NAME="files Coverage Results" MODIFIED="1515423039370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FIle" />
-    <SUITE FILE_PATH="coverage/Amusing_python$thread_run.coverage" NAME="thread_run Coverage Results" MODIFIED="1517730562734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thread_work/Tread_monintor_cpu" />
-    <SUITE FILE_PATH="coverage/Amusing_python$Thread_fork.coverage" NAME="Thread_fork Coverage Results" MODIFIED="1517733344782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thread_work/Thread_run_test" />
-    <SUITE FILE_PATH="coverage/Amusing_python$Thread_example.coverage" NAME="Thread_example Coverage Results" MODIFIED="1517733410462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thread_work/Thread_run_test" />
-    <SUITE FILE_PATH="coverage/Amusing_python$main.coverage" NAME="main Coverage Results" MODIFIED="1517669065314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Monitoring/Monitor" />
-    <SUITE FILE_PATH="coverage/Amusing_python$file_log.coverage" NAME="file_log Coverage Results" MODIFIED="1515420991930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FIle" />
-  </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
-    <leaf>
-      <file leaf-file-name="spider.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spider/first_spider/spider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-=======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Thread_example.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_example.py">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+            <state relative-caret-position="140">
+              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proxy.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Proxy/proxy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-818">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ssh_shell.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment_scripts/ssh_shell.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,46 +116,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-<<<<<<< HEAD
-      <find>`</find>
-=======
-      <find>Buy_Tickets</find>
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FIle/bad_file.txt" />
-        <option value="$PROJECT_DIR$/FIle/file_log.py" />
-        <option value="$PROJECT_DIR$/FIle/files.py" />
-        <option value="$PROJECT_DIR$/train_pickle/train_file.py" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/spider/first_spider/spider.py" />
-=======
-        <option value="$PROJECT_DIR$/Algorithm/test_args.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/setting.json" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/operation/Modify_configuration.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/Monitor/setting.json" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/Monitor/__init__.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/Check/check_cpu.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/operation/get_cpu_top.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/operation/get_setting_monitor.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/Monitor/Monitor_process.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/operation/get_memory_top.py" />
-        <option value="$PROJECT_DIR$/Monitoring/Monitor/main.py" />
-        <option value="$PROJECT_DIR$/Thread_work/Tread_monintor_cpu/thread_run.py" />
-        <option value="$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_fork.py" />
-        <option value="$PROJECT_DIR$/Thread_work/Thread_test.py" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+        <option value="$PROJECT_DIR$/Deployment_scripts/ssh_shell.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Proxy/proxy.py" />
       </list>
     </option>
   </component>
@@ -113,30 +134,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="107" />
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="797" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>AngularJS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="-4" />
+    <option name="width" value="1920" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -154,6 +155,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,44 +166,24 @@
             <path>
               <item name="Amusing_python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Amusing_python" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="File_operation" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="Thread_work" type="462c0819:PsiDirectoryNode" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-            </path>
-            <path>
-              <item name="Amusing_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Amusing_python" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="File_operation" type="462c0819:PsiDirectoryNode" />
-              <item name="create_file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Amusing_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Amusing_python" type="462c0819:PsiDirectoryNode" />
-              <item name="spider" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="Thread_work" type="462c0819:PsiDirectoryNode" />
-              <item name="Thread_run_test" type="462c0819:PsiDirectoryNode" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+              <item name="Proxy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="/Volumes/4/py2dev/bin/python2.7" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../work_envrioment/pydev2/bin/python2.7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/File_operation" />
+      <recent name="$PROJECT_DIR$/spider" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -215,216 +197,47 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Python.spider">
-    <configuration name="file_log" type="PythonConfigurationType" factoryName="Python" temporary="true">
-=======
-  <component name="RunManager" selected="Python.Thread_example">
-    <configuration name="Thread_example" type="PythonConfigurationType" factoryName="Python" temporary="true">
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Thread_work/Thread_run_test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Amusing_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_example.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="Thread_fork" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Thread_work/Thread_run_test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Amusing_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_fork.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-<<<<<<< HEAD
-    <configuration name="spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
-=======
-    <configuration name="Unittests in Thread_run_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Thread_work/Thread_run_test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Amusing_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Thread_work/Thread_run_test&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Monitoring/Monitor" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Amusing_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Monitoring/Monitor/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="thread_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-<<<<<<< HEAD
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider/first_spider" />
-=======
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Thread_work/Tread_monintor_cpu" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Amusing_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-<<<<<<< HEAD
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/first_spider/spider.py" />
-=======
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Thread_work/Tread_monintor_cpu/thread_run.py" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-<<<<<<< HEAD
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Python.files" />
-      <item index="1" class="java.lang.String" itemvalue="Python.file_log" />
-      <item index="2" class="java.lang.String" itemvalue="Python.spider" />
-    </list>
-    <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.spider" />
-        <item index="1" class="java.lang.String" itemvalue="Python.files" />
-        <item index="2" class="java.lang.String" itemvalue="Python.file_log" />
-=======
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.thread_run" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Thread_fork" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in Thread_run_test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Thread_example" />
-    </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Thread_example" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in Thread_run_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Thread_fork" />
-        <item index="3" class="java.lang.String" itemvalue="Python.thread_run" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      </list>
-    </recent_temporary>
-  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0eba1872-960f-4ee6-ad87-99576b7bfbca" name="Default" comment="" />
-      <created>1515418616457</created>
+      <changelist id="8d7d54dd-39de-4ee6-8011-edfc3cb418aa" name="Default" comment="" />
+      <created>1527241357794</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1515418616457</updated>
+      <updated>1527241357794</updated>
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_in_Thread_run_test - 2018.02.04 at 16h 35m 58s.xml">
-      <configuration name="Unittests in Thread_run_test" configurationId="tests" />
-    </history-entry>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="-4" width="1922" height="1095" extended-state="6" />
+    <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29041487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22249094" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30829757" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19170243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27938035" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19551282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-=======
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23247497" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29041487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -433,31 +246,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="2" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/Modify_configuration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/get_memory_top.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/get_setting_monitor.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -465,149 +258,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/main.py">
+    <entry file="file://$PROJECT_DIR$/Deployment_scripts/ssh_shell.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#63#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm/test_args.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm/test_args.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitoring_system/check_process_memory.py" />
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitoring_system/check_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitoring_system/check_process_memory.py" />
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitoring_system/check_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_pickle/train_file.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/duoxiancheng.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/new_fike.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/file_log.py" />
-    <entry file="file://$PROJECT_DIR$/train_pickle/train_file.py" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-    <entry file="file://$PROJECT_DIR$/FIle/duoxiancheng.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/new_fike.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/file_log.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/files.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/duoxiancheng.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/files.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/new_fike.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/myapp.log" />
-    <entry file="file://$PROJECT_DIR$/FIle/file_log.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/duoxiancheng.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/bad_file.txt" />
-    <entry file="file://$PROJECT_DIR$/FIle/myapp.log" />
-    <entry file="file://$PROJECT_DIR$/FIle/file_log.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/files.py" />
-    <entry file="file://$PROJECT_DIR$/FIle/new_fike.py" />
-    <entry file="file://$PROJECT_DIR$/train_pickle/train_file.py" />
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/Practical/train_pickle/train_file.py">
-=======
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitoring_system/check_process_memory.py" />
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitoring_system/check_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm/test_args.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/setting.json" />
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/Monitor/setting.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/Monitor/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/Check/check_cpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/get_cpu_top.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="20" />
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/Monitor/Monitor_process.py">
+    <entry file="file:///usr/lib/python2.7/dist-packages/paramiko/channel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        <state relative-caret-position="4301">
+          <caret line="280" column="8" lean-forward="false" selection-start-line="280" selection-start-column="8" selection-end-line="280" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment_scripts/ssh_shell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/Modify_configuration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/get_memory_top.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/operation/get_setting_monitor.py">
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+    <entry file="file://$PROJECT_DIR$/spider/Practical/train_pickle/train_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -615,83 +289,50 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/File_operation/create_file/cerate_file.py">
+    <entry file="file://$PROJECT_DIR$/check_file/check-files使用手册.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/File_operation/create_file/create_dir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/Monitoring/Monitor/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#63#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Thread_work/Tread_monintor_cpu/thread_run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#18#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_fork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Thread_work/Thread_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/spider/first_spider/spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-=======
-    <entry file="file://$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Thread_work/Thread_run_test/test.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Thread_work/Thread_run_test/Thread_example.py">
+    <entry file="file://$PROJECT_DIR$/check_file/create_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
->>>>>>> 903c35259ca939bb5ec8ffefdb20134aaaf244e3
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/File_operation/checkDiskBadSectors.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/File_operation/read_files使用手册.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proxy/proxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-818">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
