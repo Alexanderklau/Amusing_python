@@ -2,6 +2,7 @@
 __author__ = 'lau.wenbo'
 
 import paramiko
+
 hostname = 'node2'
 username = 'root'
 password = 'daemon'

@@ -1,5 +1,0 @@
-/infinityfs1/xiaomi2        10.0.20.132(rw,no_root_squash,async,fsid=333)
-/infinityfs1/xiaomi2        10.0.20.132(rw,no_root_squash,async,fsid=463)
-/infinityfs1/xiaomi2        10.0.20.132(rw,no_root_squash,async,fsid=794)
-/infinityfs1/xiaomi1        10.0.20.132(rw,no_root_squash,async,fsid=713)
-/infinityfs1/xiaomi1        10.0.20.132(rw,no_root_squash,async,fsid=529)
