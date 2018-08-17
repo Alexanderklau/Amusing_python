@@ -9,6 +9,7 @@ __author__ = 'lau.wenbo'
 
 
 from elasticsearch import Elasticsearch
+from elasticsearch import helpers
 
 
 class ElasticSearchUtil:
@@ -120,11 +121,11 @@ class ElasticSearchUtil:
         message = self.searchDoc(index, type, query)
         return message
 
-    def search_all(self, index=None, type=None):
+    def search_all(self, client=None, index=None, type=None):
         # 查询所有的日志
-        query = {'query': {'match_all': {}}}
-        message = self.searchDoc(index, type, query)
-        return message
+        query = {"query" : {"match_all" : {}}}
+        scanResp = helpers.scan(client, query, scroll="10m", index=index, doc_type=type, timeout="10m")
+        return scanResp
 
 
     def getDocById(self, index, type, id):
@@ -162,6 +163,10 @@ if __name__ == '__main__':
     host = "10.0.6.118"
     port = "9200"
     esAction = ElasticSearchUtil(port, host)
+    es = Elasticsearch(["10.0.6.118:9200"])
+    print(esAction)
+    a = ElasticSearchUtil.search_all(es,index="http_code",type="error_code")
+    print(a)
     # print(esAction)
     # print esAction.check()
 
@@ -171,16 +176,16 @@ if __name__ == '__main__':
 
 
     # Search API
-    query2 = {
-        'query': {
-        'match': {
-        'message': 'node'
-        }
-        }
-    }
+    # query2 = {
+    #     'query': {
+    #     'match': {
+    #     'message': 'node'
+    #     }
+    #     }
+    # }
     # query = {'query': {'match_all': {}}}
-    a =  esAction.searchDoc('monlog', 'mon', query2)["hits"]["hits"]
-    print(a)
+    # a =  esAction.searchDoc('http_code', 'error_code', query)["hits"]["hits"]
+    # print(len(a))
     # print(a)
     # query = {'query': {'term': {'name': 'jackaaa'}}}
     # print esAction.searchDoc('_index', '_type', query)
