@@ -7,14 +7,14 @@ __author__ = 'lau.wenbo'
 '''
 
 import xlrd
-import xlwt
 import xlutils.copy
 import re
+import res
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-Excel = xlrd.open_workbook("../Example_by_work/work.xlsx")
+Excel = xlrd.open_workbook("../Example_by_work/test.xlsx")
 sheet = Excel.sheet_by_name('Sheet1')
 ws = xlutils.copy.copy(Excel)
 
@@ -23,6 +23,7 @@ ws = xlutils.copy.copy(Excel)
 
 
 def Calculator_money(nrows):
+    dic = {}
     money = 0
     late_time = 0
     for z in sheet.row_values(nrows)[4:35]:
@@ -44,15 +45,31 @@ def Calculator_money(nrows):
 
     last_money = money - late_time
 
-    return last_money
+    dic["name"] = sheet.row_values(nrows)[1:3][1]
+    dic["id"] = int(sheet.row_values(nrows)[1:3][0])
+    dic["money"] = last_money
+    dic["later"] = late_time
 
-def Write_excel(nrows,money):
-    table = ws.get_sheet(0)
-    table.write(nrows,53,money)
+    return dic
 
 
+
+name = []
+id = []
+money = []
+later = []
 for i in range(4,sheet.nrows):
-    money = Calculator_money(i)
-    Write_excel(i,money)
-ws.save("../Example_by_work/work.xlsx")
+    message = Calculator_money(i)
+    name.append(message["name"])
+    id.append(message["id"])
+    money.append(message["money"])
+    later.append(message["later"])
+
+
+res.write_name_excel(*name)
+res.write_id_excel(*id)
+res.write_time_excel(*later)
+res.write_money_excel(*money)
+
+res.save_excel_data()
 
