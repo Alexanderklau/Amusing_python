@@ -14,8 +14,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-Excel = xlrd.open_workbook("../Example_by_work/test.xlsx")
-sheet = Excel.sheet_by_name('Sheet1')
+Excel = xlrd.open_workbook("../Example_by_work/1.xlsx")
+sheet = Excel.sheet_by_name(u'8月考勤表')
 ws = xlutils.copy.copy(Excel)
 
 # print sheet.name,sheet.nrows,sheet.ncols
