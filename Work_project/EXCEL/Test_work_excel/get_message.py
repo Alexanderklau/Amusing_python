@@ -8,7 +8,7 @@ import xlutils.copy
 from operator import itemgetter
 from itertools import groupby
 
-Excel = xlrd.open_workbook("../Example_by_work/1.xlsx")
+Excel = xlrd.open_workbook("../../Example_by_work/1.xlsx")
 
 table_name = []
 for i in Excel.sheet_names():
@@ -63,6 +63,4 @@ def get_message_dic():
     messages = dict([(key,list(group)) for key,group in lstg])
     return messages
 
-
-
-
+# print get_message_dic().get(u"刘彦序")
