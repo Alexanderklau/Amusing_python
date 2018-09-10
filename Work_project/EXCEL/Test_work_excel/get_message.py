@@ -30,8 +30,12 @@ def create_dict(nrows):
     start_work_date = message[8]
     end_work_date = message[9]
 
-    if start_work_date.strip() == "" or end_work_date.strip() == "":
-        tk_message = "?"
+    if start_work_date.strip() == "" and end_work_date.strip() == "":
+        tk_message = u"旷工"
+    elif start_work_date.strip() == "":
+        tk_message = u"上班未打卡"
+    elif end_work_date.strip() == "":
+        tk_message = u"下班未打卡"
     elif int(start_work_date.split(":")[0]) >= 10 and int(end_work_date.split(":")[0]) >= 22:
         start_late_time = str(int(start_work_date.split(":")[1]))
         time_date = u"迟到{time}".format(time=start_late_time)
@@ -58,9 +62,10 @@ def get_message_dic():
         message = create_dict(i)
         lst.append(message)
 
-    lst.sort(key=itemgetter('name'))  # 需要先排序，然后才能groupby。lst排序后自身被改变
-    lstg = groupby(lst, itemgetter('name'))
+    lst.sort(key=itemgetter('id'))  # 需要先排序，然后才能groupby。lst排序后自身被改变
+    lstg = groupby(lst, itemgetter('id'))
     messages = dict([(key,list(group)) for key,group in lstg])
     return messages
 
-# print get_message_dic().get(u"刘彦序")
+
+# print get_message_dic().get(u"24")
