@@ -36,18 +36,23 @@ def get_month_day(month, year):
     return days
 
 def create_column(day):
-    sheet1.write(0,0,u"名字")
+    sheet1.write(0, 0, u"考勤号")
+    sheet1.write(0, 1, u"名字")
     for i in range(1, int(day) + 1):
-        sheet1.write(0,i,str(i))
-    sheet1.write(0,int(day+1),u'迟到早退')
+        sheet1.write(0, i + 1, str(i))
+    sheet1.write(0,int(day) + 2,u'迟到早退')
     book.save('simple.xls')
 
+
 def create_name(name_list):
-    z = [i for i in name_list]
+    z = [i.keys()[0] for i in name_list]
+    v = [i.values()[0] for i in name_list]
     x = [i for i in range(1, len(name_list) + 1)]
-    for a,b in zip(z,x):
-        sheet1.write(b, 0, a)
+    for a,b,c in zip(z,x,v):
+        sheet1.write(b, 1, a)
+        sheet1.write(b, 0, str(c))
     book.save('simple.xls')
+
 
 def create_message(ncrow):
     name = read_excel().row_values(ncrow)[0]
@@ -62,15 +67,27 @@ def create_message(ncrow):
 
 for i in range(1, read_excel().nrows):
     print create_message(i)
-    # try:
-    #     name = create_message(i)
-    #     print name
-    # except:
-    #     continue
-#     print name
-    # print name
-    # message_dic = get_message.get_message_dic()
-    # print message_dic.keys()
+
+    import read_xls
+    id = read_excel().row_values(ncrow)[0]
+    message_dic = get_message.get_message_dic()
+    ms = message_dic.get(u'{id}'.format(id=id))
+
+    for i in ms:
+        row = read_xls.get_row(i)
+        col = read_xls.get_col(i)
+        sheet1.write(int(col), int(row), i["tk_message"])
+    book.save('simple.xls')
+
+
+day = get_month_day(9, 2018)
+create_column(day=int(day))
+name_list = create_ncrow.return_name()
+create_name(name_list)
+for i in range(1, read_excel().nrows):
+    create_message(i)
+    # print(create_message(i))
+# name = create_message(10)
 
 # day = get_month_day(9, 2018)
 # create_column(day=int(day))
