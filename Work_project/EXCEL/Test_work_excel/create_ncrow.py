@@ -16,14 +16,14 @@ Excel = xlrd.open_workbook("../../Example_by_work/1.xlsx")
 
 table_name = []
 for i in Excel.sheet_names():
-     if u"考勤明细-1" in i:
+     if u"名单" in i:
          table_name.append(i)
 
 sheet = Excel.sheet_by_name(table_name[0])
 ws = xlutils.copy.copy(Excel)
 
 def get_name_list(ncrow):
-    name = sheet.row_values(ncrow)[0:35][3]
+    name = sheet.row_values(ncrow)[0:35][0]
     return name
 
 def return_name():

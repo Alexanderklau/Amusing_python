@@ -7,7 +7,6 @@ import xlwt
 from xlwt import Workbook
 import create_ncrow
 import xlrd
-import xlutils.copy
 import get_message
 
 
@@ -52,24 +51,27 @@ def create_name(name_list):
 
 def create_message(ncrow):
     name = read_excel().row_values(ncrow)[0]
-    # print name
     message_dic = get_message.get_message_dic()
     ms = message_dic.get(u'{name}'.format(name=name))
-    for i in ms:
-        print i['name']
-    # date = read_excel().row_values(0)[1:-1]
-    # for i in date:
-    #     print str(int(i))
-    #     print ms[int(i)]["tk_message"]
+    print ms
+    date = read_excel().row_values(0)[1:]
+    for i in date:
+        print str(int(i))
+        print ms[int(i)]["tk_message"]
 
 
-
-
-# for i in range(1, 10):
-name = create_message(10)
+for i in range(1, read_excel().nrows):
+    print create_message(i)
+    # try:
+    #     name = create_message(i)
+    #     print name
+    # except:
+    #     continue
+#     print name
     # print name
     # message_dic = get_message.get_message_dic()
     # print message_dic.keys()
+
 # day = get_month_day(9, 2018)
 # create_column(day=int(day))
 # name_list = create_ncrow.return_name()
