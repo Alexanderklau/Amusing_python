@@ -14,7 +14,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-Excel = xlrd.open_workbook("../Example_by_work/3.xlsx")
+Excel = xlrd.open_workbook("1.xlsx")
 table_name = Excel.sheet_names()
 one_table = table_name[0]
 sheet = Excel.sheet_by_name(one_table)
