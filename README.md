@@ -87,3 +87,6 @@
 1. 添加了Excel数据清洗逻辑
 2. 添加了杂乱数据处理逻辑
 3. 多线程data文件去重
+
+### 2018.11.15 update
+1. Add check remote server time scrpit
