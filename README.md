@@ -21,7 +21,7 @@
 16. Work_project 办公脚本，处理excel,计算考勤，自动提交代码等
 17. Network_security 网络安全脚本,攻击脚本
 18. Encrypt_work 加密逻辑
-
+19. operation 运维脚本
 
 ### 2018.4.19 更新
 1. 添加检测文件是否不可读/损坏脚本
@@ -94,3 +94,7 @@
 ### 2018.11.20 update
 1. 添加了扫描端口的脚本
 2. 添加了控制/打开端口脚本
+
+### 2018.11.26 update
+1. Add operation script project
+2. 
