@@ -21,7 +21,7 @@ class ElasticSearchUtil:
     def __del__(self):
         self.close()
 
-    def check(self):
+    def info(self):
         '''
         输出当前系统的ES信息
         '''
@@ -32,7 +32,7 @@ class ElasticSearchUtil:
         检查集群的健康状态
         :return:
         '''
-        return self
+        return self.conn.transport.perform_request('GET', '/_cluster/health', params=None)
 
     def insertDocument(self, index, type, body, id=None):
         '''
@@ -160,13 +160,16 @@ class ElasticSearchUtil:
             self.conn = None
 
 if __name__ == '__main__':
-    host = "10.0.6.118"
+    host = "10.0.6.120"
     port = "9200"
     esAction = ElasticSearchUtil(port, host)
-    es = Elasticsearch(["10.0.6.118:9200"])
-    print(esAction)
-    a = ElasticSearchUtil.search_all(es,index="http_code",type="error_code")
-    print(a)
+    print esAction.check_health()
+    # es = Elasticsearch(["10.0.6.118:9200"])
+    # print(es)
+    # print(esAction.conn)
+    # a = esAction.search_all(esAction.conn,index="user",type="message")
+    # for i in a:
+    #     print(i)
     # print(esAction)
     # print esAction.check()
 
@@ -236,7 +239,7 @@ if __name__ == '__main__':
     # body = {'script': "ctx._source.remove('age')"}#删除字段
     # body = {'script': "ctx._source.address = '合肥'"}#增加字段
     # body = {"doc": {"name": 'jackaaa'}}#修改部分字段
-    # print esAction.updateDocById('demo', 'test', '6gsqT2ABSm0tVgi2UWls', body)
+    # print esAction.updateDocById('demo', 'test', 'z', body)
 
     # Delete API
     # body = {"query": {"name": 'jackbbb', 'sex': 'male'}}

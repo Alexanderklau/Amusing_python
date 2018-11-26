@@ -7,7 +7,7 @@ from elasticsearch import helpers
 
 
 
-es = Elasticsearch(hosts="10.0.20.19",port=9200)
+es = Elasticsearch(hosts="10.0.6.118",port=9200)
 
 
 def searchDoc(index=None, type=None, body=None):
@@ -38,3 +38,4 @@ def search_all(client=None, index=None, type=None):
 # a = search_all(client=es, index="user", type="message")
 # for i in a:
 #     print(i)
+#
