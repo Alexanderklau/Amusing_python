@@ -90,3 +90,7 @@
 
 ### 2018.11.15 update
 1. Add check remote server time scrpit
+
+### 2018.11.20 update
+1. 添加了扫描端口的脚本
+2. 添加了控制/打开端口脚本
