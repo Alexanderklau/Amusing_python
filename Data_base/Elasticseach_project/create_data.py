@@ -19,7 +19,7 @@ def work():
 
     # f = open('monlog.log')
     i = 1
-    for line in range(1,30000):
+    for line in range(1,100):
         try:
             action = {
                 "_index": "user",
@@ -44,7 +44,7 @@ def work():
 
 if __name__=='__main__':
     p = Pool(4)
-    for i in range(5):
+    for i in range(10):
         p.apply_async(work(), args=(i,))
         print('Waiting for all subprocesses done...')
     p.close()
