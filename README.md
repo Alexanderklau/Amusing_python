@@ -97,4 +97,7 @@
 
 ### 2018.11.26 update
 1. Add operation script project
-2. 
+
+### 2018.12.11 update
+1. 添加了多进程/线程写入文件
+2. 添加了

@@ -9,7 +9,7 @@ import time
 
 
 def mycallback(x):
-    with open('test.log', 'a+') as f:
+    with open('/media/lau/datas/home/lau/Code/Go-project/Log_collector/monlog.log', 'a+') as f:
         f.writelines(str(x) + '\n')
 
 
@@ -20,7 +20,7 @@ def sayHi(num):
     cluster = ["cpu", "cluster", "memeory", "disk"]
     message = "journal: system {cluster} {level} {clusters} load is overloaded".format(
         cluster=random.choice(cluster), level=random.choice(level),clusters=random.choice(cluster))
-    w = {"level":random.choice(level),"message":message,"times":times,"node":random.choice(node_list)}
+    w = times + " " + message
     return w
 
 

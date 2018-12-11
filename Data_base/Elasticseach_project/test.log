@@ -1,0 +1,40 @@
+{'node': 'node3', 'message': 'journal: system cpu NOTICE memeory load is overloaded', 'level': 'NOTICE', 'times': '2018-12-04T19:02:07.702594'}
+{'node': 'node1', 'message': 'journal: system disk ERROR cluster load is overloaded', 'level': 'ERROR', 'times': '2018-12-04T19:02:07.702671'}
+{'node': 'node3', 'message': 'journal: system cluster NOTICE disk load is overloaded', 'level': 'ERROR', 'times': '2018-12-04T19:02:07.702734'}
+{'node': 'node2', 'message': 'journal: system memeory ERROR cluster load is overloaded', 'level': 'NOTICE', 'times': '2018-12-04T19:02:07.703107'}
+{'node': 'node2', 'message': 'journal: system cpu NOTICE cluster load is overloaded', 'level': 'ERROR', 'times': '2018-12-04T19:02:07.703298'}
+{'node': 'node1', 'message': 'journal: system cpu NOTICE disk load is overloaded', 'level': 'ERROR', 'times': '2018-12-04T19:02:07.703356'}
+{'node': 'node3', 'message': 'journal: system cluster WARNING cluster load is overloaded', 'level': 'WARNING', 'times': '2018-12-04T19:02:07.703491'}
+{'node': 'node1', 'message': 'journal: system cpu WARNING cluster load is overloaded', 'level': 'WARNING', 'times': '2018-12-04T19:02:07.703406'}
+{'node': 'node3', 'message': 'journal: system cpu NOTICE cluster load is overloaded', 'level': 'NOTICE', 'times': '2018-12-04T19:02:07.703546'}
+{'node': 'node1', 'message': 'journal: system cluster ERROR memeory load is overloaded', 'level': 'WARNING', 'times': '2018-12-04T19:02:07.703465'}
+journal: system memeory ERROR memeory load is overloaded
+journal: system memeory NOTICE memeory load is overloaded
+journal: system cpu NOTICE memeory load is overloaded
+journal: system cpu NOTICE disk load is overloaded
+journal: system memeory WARNING cluster load is overloaded
+journal: system disk WARNING memeory load is overloaded
+journal: system disk WARNING cluster load is overloaded
+journal: system memeory WARNING cpu load is overloaded
+journal: system cluster WARNING memeory load is overloaded
+journal: system cpu NOTICE disk load is overloaded
+2018-12-04T19:04:33.408925 journal: system disk ERROR cpu load is overloaded
+2018-12-04T19:04:33.408992 journal: system memeory WARNING cpu load is overloaded
+2018-12-04T19:04:33.409040 journal: system memeory NOTICE cpu load is overloaded
+2018-12-04T19:04:33.409134 journal: system cpu ERROR cluster load is overloaded
+2018-12-04T19:04:33.409183 journal: system disk ERROR disk load is overloaded
+2018-12-04T19:04:33.409113 journal: system disk WARNING cluster load is overloaded
+2018-12-04T19:04:33.409150 journal: system cluster NOTICE disk load is overloaded
+2018-12-04T19:04:33.409236 journal: system disk NOTICE cpu load is overloaded
+2018-12-04T19:04:33.409197 journal: system disk ERROR disk load is overloaded
+2018-12-04T19:04:33.409262 journal: system disk NOTICE cpu load is overloaded
+2018-12-04T19:05:19.975607 journal: system memeory ERROR memeory load is overloaded
+2018-12-04T19:05:19.975819 journal: system cpu NOTICE memeory load is overloaded
+2018-12-04T19:05:19.975893 journal: system memeory ERROR cluster load is overloaded
+2018-12-04T19:05:19.975949 journal: system disk NOTICE cpu load is overloaded
+2018-12-04T19:05:19.976129 journal: system cluster NOTICE disk load is overloaded
+2018-12-04T19:05:19.976145 journal: system cluster ERROR cpu load is overloaded
+2018-12-04T19:05:19.976025 journal: system disk NOTICE cpu load is overloaded
+2018-12-04T19:05:19.975714 journal: system cluster ERROR cluster load is overloaded
+2018-12-04T19:05:19.976138 journal: system disk WARNING cpu load is overloaded
+2018-12-04T19:05:19.976059 journal: system cluster WARNING cluster load is overloaded
