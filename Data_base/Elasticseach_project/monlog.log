@@ -1,0 +1,10 @@
+2019-01-04T11:33:04.186840 journal: system disk NOTICE memeory load is overloaded
+2019-01-04T11:33:04.186894 journal: system cpu ERROR cpu load is overloaded
+2019-01-04T11:33:04.187157 journal: system disk NOTICE cluster load is overloaded
+2019-01-04T11:33:04.187348 journal: system disk WARNING memeory load is overloaded
+2019-01-04T11:33:04.187524 journal: system memeory WARNING memeory load is overloaded
+2019-01-04T11:33:04.187547 journal: system cluster ERROR cpu load is overloaded
+2019-01-04T11:33:04.187379 journal: system cluster ERROR cpu load is overloaded
+2019-01-04T11:33:04.187422 journal: system disk ERROR memeory load is overloaded
+2019-01-04T11:33:04.187476 journal: system disk NOTICE disk load is overloaded
+2019-01-04T11:33:04.187621 journal: system cpu ERROR memeory load is overloaded

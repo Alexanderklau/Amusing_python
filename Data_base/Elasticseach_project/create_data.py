@@ -12,14 +12,14 @@ fake = Faker(locale='zh_CN')
 # name = fake.name()
 # address = fake.city()
 
-es = Elasticsearch(hosts="10.0.6.244",port=9200)
+es = Elasticsearch(hosts="10.0.7.127",port=9200)
 
 def work():
     actions = []
 
     # f = open('monlog.log')
     i = 1
-    for line in range(1,100):
+    for line in range(1,10000):
         try:
             action = {
                 "_index": "user",

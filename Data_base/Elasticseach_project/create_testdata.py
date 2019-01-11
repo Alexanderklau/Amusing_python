@@ -9,7 +9,7 @@ import time
 
 
 def mycallback(x):
-    with open('/media/lau/datas/home/lau/Code/Go-project/Log_collector/monlog.log', 'a+') as f:
+    with open('./monlog.log', 'a+') as f:
         f.writelines(str(x) + '\n')
 
 
