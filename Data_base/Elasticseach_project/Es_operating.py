@@ -8,7 +8,7 @@ from elasticsearch import helpers
 
 class Es:
     def __init__(self):
-        self.conn = Elasticsearch(hosts="10.0.6.214",port=9200)
+        self.conn = Elasticsearch(hosts="10.0.7.111",port=9200)
 
 
     def check(self):
@@ -35,7 +35,7 @@ class Es:
         query = {
             'query': {
                 'match': {
-                    'message': keywords
+                    'Name': keywords
                 }
             }
         }
@@ -52,11 +52,13 @@ class Es:
 
 if __name__ == '__main__':
     z = Es()
-    a = z.search_specify(index="monlog", type="doc", keywords="cpu")
+    a = z.search_specify(index = "rgwdata", type="s3", keywords="产品")
     print(a)
-    a = z.search_all(client=z.conn, index="monlog", type="doc")
-    for i in a:
-        print(i["_source"]["message"])
+    # a = z.search_specify(index="monlog", type="doc", keywords="cpu")
+    # print(a)
+    # a = z.search_all(client=z.conn, index="monlog", type="doc")
+    # for i in a:
+    #     print(i["_source"]["message"])
 # a = search_all(client=es, index="monlog", type="doc")
 # for i in a:
 #     print(i["_source"]["message"])

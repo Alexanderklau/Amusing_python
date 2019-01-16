@@ -31,6 +31,7 @@ if __name__ == '__main__':
     for i in range(10):
         pool.apply_async(sayHi, (i,), callback=mycallback)
 
+
     pool.close()
     pool.join()
     e2 = time.time()
