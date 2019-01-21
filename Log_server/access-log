@@ -1,0 +1,2 @@
+thefile.seek(0, 2)
+thefile.seek(0, 1)
