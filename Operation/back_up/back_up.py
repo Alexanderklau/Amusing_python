@@ -7,6 +7,7 @@ __author__ = 'lau.wenbo'
 """
 
 import commands
+import difflib
 
 
 def execute(cmd):
@@ -26,22 +27,22 @@ def read_config(config):
 
 # 打包压缩
 def compress_file():
-    pass
+    (status, output) = execute("tar -czvf back_up.tar.gz back_up/")
 
 
 # 解压文件
 def uncompress_file():
-    pass
+    (status, output) = execute("tar -zxvf back_up.tar.gz")
 
 
 # 拷贝文件
 def copy_file(file):
-    z = execute("cd back_up/ && cp -avx {file} ./".format(file=file))
+    (status, output) = execute("cd back_up/ && cp -avx {file} ./".format(file=file))
 
 
 # 创建复制文件夹
 def mkdir_file():
-    z = execute("mkdir back_up/".format(file=file))
+    (status, output) = execute("mkdir back_up/".format(file=file))
 
 
 # 覆盖文件并且备份
@@ -64,5 +65,22 @@ def back_up_disk():
     pass
 
 
+# 比对文件差异
+def diff_file(filenames):
+    fileHandle = open(filenames, 'rb')
+    text = fileHandle.read().splitlines()
+    fileHandle.close()
+    return text
+
+def check_file(file1, file2):
+    text1_lines = diff_file(file1)
+    text2_lines = diff_file(file2)
+    d = difflib.Differ()
+    diff = difflib.unified_diff(text1_lines, text2_lines)
+    print "\n".join(diff)
+
+
+
+
 if __name__ == "__main__":
-    mkdir_file()
+    check_file("./file.config", "2.config")
