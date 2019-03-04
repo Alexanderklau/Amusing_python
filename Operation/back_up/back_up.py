@@ -8,6 +8,8 @@ __author__ = 'lau.wenbo'
 
 import commands
 import difflib
+import json
+import os
 
 
 def execute(cmd):
@@ -17,17 +19,15 @@ def execute(cmd):
 
 # 读配置文件
 def read_config(config):
-    result = []
     with open(config, 'r') as f:
-        for line in f:
-            result.append(line.strip('\n'))
-
-    return result
+        temp = json.loads(f.read())
+    return temp
 
 
 # 打包压缩
 def compress_file():
     (status, output) = execute("tar -czvf back_up.tar.gz back_up/")
+    (status, output) = execute("cd bach_up/ && rm -rf back_up/")
 
 
 # 解压文件
@@ -36,23 +36,18 @@ def uncompress_file():
 
 
 # 拷贝文件
-def copy_file(file):
-    (status, output) = execute("cd back_up/ && cp -avx {file} ./".format(file=file))
+def copy_file(path, file):
+    (status, output) = execute("cd back_up/{path} && \cp -avx --parents {file} ./".format(path = path, file=file))
 
 
 # 创建复制文件夹
 def mkdir_file():
-    (status, output) = execute("mkdir back_up/".format(file=file))
+    (status, output) = execute("mkdir back_up/")
 
 
-# 覆盖文件并且备份
-def cover_file():
-    pass
-
-
-# 读取文件夹下所有文件
-def get_file():
-    pass
+# 创建项目备份文件夹
+def mkdir_item_file(name):
+    (status, output) = execute("cd back_up && mkdir {name}/".format(name=name))
 
 
 # 备份网卡信息
@@ -72,6 +67,7 @@ def diff_file(filenames):
     fileHandle.close()
     return text
 
+
 def check_file(file1, file2):
     text1_lines = diff_file(file1)
     text2_lines = diff_file(file2)
@@ -80,7 +76,34 @@ def check_file(file1, file2):
     print "\n".join(diff)
 
 
+def back_up_file(config):
+    message = read_config(config)
+    # 创建备份文件夹
+    mkdir_file()
+    # 遍历目录
+    for i in message:
+        # 拷贝
+        mkdir_item_file(i)
+        # 拿到目录详细名称
+        for x in message[i]:
+            copy_file(i, x)
+
+
+# 覆盖文件并且备份
+def cover_file(path, file):
+    (status, output) = execute("cd back_up/{path} && \cp -avx {file} /{file}/*".format(path=path, file=file))
+
+
+def cover_up_file(config):
+    message = read_config(config)
+    for i in message:
+            path = "./back_up/{file_path}/".format(file_path = i)
+            dirs = os.listdir(path)
+            for files in dirs:
+                cover_file(i, files)
+
 
 
 if __name__ == "__main__":
-    check_file("./file.config", "2.config")
+    pass
+
