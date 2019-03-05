@@ -10,6 +10,11 @@ import commands
 import difflib
 import json
 import os
+import sys
+import time
+import infinity.common.inficore as infinity
+import system.system_api as system_api
+
 
 
 def execute(cmd):
@@ -25,21 +30,23 @@ def read_config(config):
 
 
 # 打包压缩
-def compress_file():
-    (status, output) = execute("tar -czvf back_up.tar.gz back_up/")
+def compress_file(node):
+    (status, output) = execute("tar -czvf {node}.tar.gz back_up/".format(node=node))
     (status, output) = execute("cd bach_up/ && rm -rf back_up/")
 
 
 # 解压文件
-def uncompress_file():
-    (status, output) = execute("tar -zxvf back_up.tar.gz")
+def uncompress_file(node):
+    (status, output) = execute("tar -zxvf {node}.tar.gz".format(node=node))
 
 
 # 拷贝文件
 def copy_file(path, file):
+    print("正在拷贝{file}".format(file=file))
     (status, output) = execute("cd back_up/{path} && \cp -avx --parents {file} ./".format(path = path, file=file))
-
-
+    if status != 0:
+        print("拷贝失败{file}".format(file=file))
+        time.sleep(1)
 # 创建复制文件夹
 def mkdir_file():
     (status, output) = execute("mkdir back_up/")
@@ -52,12 +59,25 @@ def mkdir_item_file(name):
 
 # 备份网卡信息
 def back_up_network():
-    pass
+    print("正在拷贝网卡信息")
+    (status, output) = execute("cd back_up/ && rm -rf network && mkdir network && cd network && \cp -avx "
+                               "/etc/sysconfig/network-scripts ./")
+    if status != 0:
+        print("拷贝网卡信息失败.... .")
+        time.sleep(1)
 
 
 # 备份磁盘信息
-def back_up_disk():
-    pass
+def back_up_disk(ipaddr):
+    print("正在拷贝磁盘信息")
+    (status, output) = execute("cd back_up/ && touch disk.file")
+    f = open("./back_up/disk.file", "w+")
+    ret = system_api.list_disk(ipaddr)
+    if ret[0] == 0:
+        lists = ret[1]["disklist"]
+        for i in lists:
+            f.write(str(i))
+    f.close()
 
 
 # 比对文件差异
@@ -91,7 +111,11 @@ def back_up_file(config):
 
 # 覆盖文件并且备份
 def cover_file(path, file):
+    print("正在覆盖{file}".format(file=file))
     (status, output) = execute("cd back_up/{path} && \cp -avx {file} /{file}/*".format(path=path, file=file))
+    if status != 0:
+        print("覆盖失败{file}".format(file=file))
+        time.sleep(1)
 
 
 def cover_up_file(config):
@@ -102,8 +126,58 @@ def cover_up_file(config):
             for files in dirs:
                 cover_file(i, files)
 
+def systemctl_restart():
+    (status, output) = execute("systemctl restart infi-api")
+    (status, output) = execute("systemctl restart infi-rpc")
+    (status, output) = execute("systemctl restart csync2")
+    (status, output) = execute("systemctl restart smb")
+
+def ceph_setting(node):
+    ceph_status = {}
+    (status, output) = execute("cd back_up/ && touch ceph.file")
+    f = open("./back_up/ceph.file", "w+")
+    ret = execute("ETCDCTL_API=\"3\" /usr/bin/etcdctl get \"infi-cluster/{node}\"".format(node=node))
+    message = eval(ret[1].split("\n")[1])
+    ceph_list = ["mgr_node", "mds_node", "mon_node"]
+    for i in ceph_list:
+        status = message[i]
+        ceph_status[i] = status
+    f.write(str(ceph_status))
+    f.close()
+
+def ceph_back_up(node):
+    f = open("./back_up/ceph.file", "r")
+    message = f.readlines()
+    # ceph_status = eval(message[0])
+    ceph_status = {'mgr_node': 1, 'mon_node': 1, 'mds_node': 1}
+    ceph_list = ["mgr_node", "mds_node", "mon_node"]
+    for i in ceph_list:
+        status = ceph_status[i]
+        if status != 1:
+            (status, output) = execute("ceph-deploy {ceph} create {node}".format(ceph=ceph, node=node))
+
 
 
 if __name__ == "__main__":
-    pass
+    print ceph_back_up("node214")
+    if len(sys.argv) < 2:
+        print "Please enter the correct option！"
+    else:
+        if sys.argv[1] == "back_up":
+                config = "setting.json"
+                node = sys.argv[2]
+                ipaddr = sys.argv[3]
+                back_up_file(config)
+                back_up_network()
+                back_up_disk(ipaddr)
+                compress_file(node)
+        elif sys.argv[1] == "cover_up":
+                node = sys.argv[2]
+                config = "setting.json"
+                uncompress_file(node)
+                cover_up_file(config)
+        else:
+            print "Illegal operation"
+
+
 
