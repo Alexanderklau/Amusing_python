@@ -145,17 +145,18 @@ def ceph_setting(node):
     f.write(str(ceph_status))
     f.close()
 
+
 def ceph_back_up(node):
     f = open("./back_up/ceph.file", "r")
     message = f.readlines()
-    # ceph_status = eval(message[0])
-    ceph_status = {'mgr_node': 1, 'mon_node': 1, 'mds_node': 1}
-    ceph_list = ["mgr_node", "mds_node", "mon_node"]
-    for i in ceph_list:
-        status = ceph_status[i]
-        if status != 1:
-            (status, output) = execute("ceph-deploy {ceph} create {node}".format(ceph=ceph, node=node))
-
+    ceph_lists = {"mgr_node": "rgw", "mds_node": "mds", "mon_node": "mon"}
+    for i in ceph_lists.keys():
+        status = eval(message[0])[i]
+        if status == 1:
+            (status, output) = execute("ceph-deploy {ceph} create {node}".format(ceph=ceph_lists[i], node=node))
+            if status != 0:
+                print "{ceph}服务创建错误".format(ceph=i)
+                time.sleep(3)
 
 
 if __name__ == "__main__":
@@ -171,11 +172,13 @@ if __name__ == "__main__":
                 back_up_network()
                 back_up_disk(ipaddr)
                 compress_file(node)
+                ceph_setting(node)
         elif sys.argv[1] == "cover_up":
                 node = sys.argv[2]
                 config = "setting.json"
                 uncompress_file(node)
                 cover_up_file(config)
+                ceph_back_up(node)
         else:
             print "Illegal operation"
 
