@@ -19,14 +19,9 @@
             "/etc/nsswitch.conf",
             "/etc/hosts",
             "/root/.ssh",
-            "/var/lib/sysdb"
-          ],
-  "BASE":
-          [
-            "/etc/sysconfig/network-scripts"
-          ],
-  "HIVE":
-          [
-            "/etc/elasticsearch"
+            "/var/lib/sysdb",
+            "/etc/csync2.key",
+            "/etc/krb5.conf",
+            "/etc/exports"
           ]
 }

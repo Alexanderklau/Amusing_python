@@ -1,0 +1,10 @@
+{
+  "INFI_SERVER":
+  [
+    "systemctl restart infi-api",
+    "systemctl restart infi-rpc"
+    "systemctl restart sysdb"
+    "systemctl restart smb"
+    "systemctl restart csync2"
+  ]
+}

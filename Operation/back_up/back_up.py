@@ -112,7 +112,7 @@ def back_up_file(config):
 # 覆盖文件并且备份
 def cover_file(path, file):
     print("正在覆盖{file}".format(file=file))
-    (status, output) = execute("cd back_up/{path} && \cp -avx {file} /{file}/*".format(path=path, file=file))
+    (status, output) = execute("cd back_up/{path} && \cp -avx {file}/.* /{file}/".format(path=path, file=file))
     if status != 0:
         print("覆盖失败{file}".format(file=file))
         time.sleep(1)
@@ -126,11 +126,16 @@ def cover_up_file(config):
             for files in dirs:
                 cover_file(i, files)
 
-def systemctl_restart():
-    (status, output) = execute("systemctl restart infi-api")
-    (status, output) = execute("systemctl restart infi-rpc")
-    (status, output) = execute("systemctl restart csync2")
-    (status, output) = execute("systemctl restart smb")
+def systemctl_restart(config):
+    services = read_config(config)
+    for i in services:
+        print("重启{service}系列服务开始".format(service=i))
+        for s in services[i]:
+            (status, output) = execute(s)
+            if status == 0:
+                print("重启服务成功".format(service=s))
+            else:
+                print("重启服务失败".format(service=s))
 
 def ceph_setting(node):
     ceph_status = {}
@@ -140,8 +145,11 @@ def ceph_setting(node):
     message = eval(ret[1].split("\n")[1])
     ceph_list = ["mgr_node", "mds_node", "mon_node"]
     for i in ceph_list:
-        status = message[i]
-        ceph_status[i] = status
+        try:
+            statuss = message[i]
+        except:
+            continue
+        ceph_status[i] = statuss
     f.write(str(ceph_status))
     f.close()
 
@@ -149,10 +157,13 @@ def ceph_setting(node):
 def ceph_back_up(node):
     f = open("./back_up/ceph.file", "r")
     message = f.readlines()
-    ceph_lists = {"mgr_node": "rgw", "mds_node": "mds", "mon_node": "mon"}
+    ceph_lists = {"mgr_node": "mgr", "mds_node": "mds", "mon_node": "mon"}
     for i in ceph_lists.keys():
-        status = eval(message[0])[i]
-        if status == 1:
+        try:
+            ceph_status = eval(message[0])[i]
+        except:
+            continue
+        if ceph_status == 1:
             (status, output) = execute("ceph-deploy {ceph} create {node}".format(ceph=ceph_lists[i], node=node))
             if status != 0:
                 print "{ceph}服务创建错误".format(ceph=i)
@@ -160,7 +171,6 @@ def ceph_back_up(node):
 
 
 if __name__ == "__main__":
-    print ceph_back_up("node214")
     if len(sys.argv) < 2:
         print "Please enter the correct option！"
     else:
@@ -171,14 +181,16 @@ if __name__ == "__main__":
                 back_up_file(config)
                 back_up_network()
                 back_up_disk(ipaddr)
-                compress_file(node)
                 ceph_setting(node)
+                compress_file(node)
         elif sys.argv[1] == "cover_up":
                 node = sys.argv[2]
                 config = "setting.json"
+                service_config = "service.json"
                 uncompress_file(node)
                 cover_up_file(config)
                 ceph_back_up(node)
+                systemctl_restart(service_config)
         else:
             print "Illegal operation"
 
