@@ -9,7 +9,6 @@
             "/etc/pureftpd.pdb",
             "/etc/user.pwd.digest",
             "/etc/samba",
-            "/etc/dt.d/domain-info",
             "/etc/resolv.conf",
             "/etc/dt.d/cnas.conf",
             "/etc/sysconfig/ctdb",
@@ -18,10 +17,13 @@
             "/etc/ctdb/public_addresses",
             "/etc/nsswitch.conf",
             "/etc/hosts",
-            "/root/.ssh",
-            "/var/lib/sysdb",
             "/etc/csync2.key",
             "/etc/krb5.conf",
-            "/etc/exports"
+            "/etc/exports",
+            "/etc/sysdb",
+            "/etc/csync2.cfg",
+            "/etc/netatalk/afp.conf",
+            "/var/lib/sysdb",
+            "/etc/ntp.conf"
           ]
 }
