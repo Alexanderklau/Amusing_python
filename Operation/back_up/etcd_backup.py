@@ -13,7 +13,7 @@ baseputcmd = "ETCDCTL_API=3 /usr/bin/etcdctl put"
 cmdstop = "/usr/bin/systemctl stop sysdb"
 cmdstart = "/usr/bin/systemctl start sysdb"
 cmdaddnode = '/bin/python ./sysdb_rebuild.py '
-keylist = ["createdIndex", "fs", "groups", "infi", "users", "monitor", "monlog"]
+keylist = ["createdIndex", "fs", "groups", "infi", "users", "monitor"]
 keyfile = "etcdKey.log"
 kvfile = "etcdData.log"
 global ips

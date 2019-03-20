@@ -23,7 +23,6 @@
             "/etc/sysdb",
             "/etc/csync2.cfg",
             "/etc/netatalk/afp.conf",
-            "/var/lib/sysdb",
             "/etc/ntp.conf"
           ]
 }

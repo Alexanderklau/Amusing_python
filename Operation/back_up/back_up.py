@@ -15,6 +15,7 @@ import time
 import infinity.common.inficore as infinity
 import system.system_api as system_api
 import etcd_backup
+import misc.sysdb.sysdb_api as sysdb_api
 
 
 
@@ -81,9 +82,9 @@ def back_up_disk(ipaddr):
     f.close()
 
 def back_up_ssh():
-    print("备份SSH信息")
+    print("Copy SSH message")
     (status, output) = execute("cd back_up/ && rm -rf ssh && mkdir ssh/ && cd ssh && \cp -avx /root/.ssh ./ ")
-    print("备份成功")
+    print("Copy success")
 
 
 # 比对文件差异
@@ -117,10 +118,10 @@ def back_up_file(config):
 
 # 覆盖文件并且备份
 def cover_file(path, file):
-    print("正在覆盖{file}".format(file=file))
+    print("Cover {file}".format(file=file))
     (status, output) = execute("cd back_up/{path} && \cp -avx {file}/*  /{file}/".format(path=path, file=file))
     if status != 0:
-        print("覆盖失败{file}".format(file=file))
+        print("Cover filed {file}".format(file=file))
         time.sleep(1)
 
 
@@ -142,13 +143,13 @@ def cover_up_file(config):
 def systemctl_restart(config):
     services = read_config(config)
     for i in services:
-        print("重启{service}系列服务开始".format(service=i))
+        print("Restart {service} server start".format(service=i))
         for s in services[i]:
             (status, output) = execute(s)
             if status == 0:
-                print("重启服务成功".format(service=s))
+                print("Restart server success".format(service=s))
             else:
-                print("重启服务失败".format(service=s))
+                print("Restart server stop".format(service=s))
 
 
 def ceph_setting(node):
@@ -171,13 +172,36 @@ def ceph_setting(node):
     f.close()
 
 def etcd_back_up():
-    print("开始备份ETCD数据............")
+    print("Start copy ETCD data............")
     (status, output) = execute("cd back_up/ && mkdir etcd")
     active = etcd_backup.dumpAllData()
 
 def etcd_cover_up():
-    print("开始恢复ETCD数据.............")
+    print("Start cover ETCD data.............")
     active = etcd_backup.putAllData()
+
+
+def delete_sysdb(ip):
+    print("Start delete ETCD node.........")
+    (status, output) = sysdb_api.do_disable_sysdb_node(ip)
+    if status != 0:
+        print("delete ETCD node filed")
+    else:
+        print("delete ETCD node start")
+
+
+def add_sysdb(ip):
+    print("Start add ETCD node.........")
+    (status, output) = sysdb_api.do_enable_sysdb_node(ip)
+    if status != 0:
+        print(" Start add ETCD node filed")
+    else:
+        print("Start ETCD node success")
+
+
+def restart_sysdb():
+    (status, output) = execute("systemctl restart sysdb")
+
 
 def ceph_back_up(node):
     f = open("./back_up/ceph.file", "r")
@@ -191,7 +215,7 @@ def ceph_back_up(node):
         if ceph_status == 1:
             (status, output) = execute("cd /var/datatom/infinity-cluster/ && ceph-deploy {ceph} create {node}".format(ceph=ceph_lists[i], node=node))
             if status != 0:
-                print "{ceph}服务创建错误".format(ceph=i)
+                print "{ceph} server create filed".format(ceph=i)
                 time.sleep(3)
     (status, output) = execute("ceph-disk activate-all")
     if status!= 0:
@@ -210,7 +234,6 @@ if __name__ == "__main__":
                 back_up_network()
                 back_up_disk(ipaddr)
                 back_up_ssh()
-                etcd_back_up()
                 ceph_setting(node)
                 compress_file(node)
         elif sys.argv[1] == "cover_up":
@@ -224,6 +247,8 @@ if __name__ == "__main__":
         elif sys.argv[1] == "ceph_back_up":
                 node = sys.argv[2]
                 ceph_back_up(node)
+        elif sys.argv[1] == "etcd_back_up":
+                etcd_back_up()
         elif sys.argv[1] == "etcd_cover_up":
                 etcd_cover_up()
         else:

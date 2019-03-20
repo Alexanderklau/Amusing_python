@@ -11,6 +11,7 @@ import socket
 import ConfigParser
 import time
 import re
+import logging
 import infinity.common.infidef
 import infinity.syslog.infi_syslog as syslog
 import infinity.common.rpc.rpc_client as rpc
@@ -60,7 +61,7 @@ class SysdbMgt:
 	def _get_sysdb_node_member_id(self, ip):
 		id = ""
 
-		cmd = "/usr/bin/etcdctl --endpoints=[%s] member list" % self._get_sysdb_endpoints()
+		cmd = "/usr/bin/etcdctl --endpoints=%s member list" % self._get_sysdb_endpoints()
 		(status, output) = sysdb.execute(cmd)
 		for item in output.split('\n'):
 			if re.search(r'%s' % ip, item):
@@ -75,7 +76,7 @@ class SysdbMgt:
 		is_ready = False
 		while index < MEMBER_READY_RETRY_TIMES:
 			index += 1
-			cmd = "/usr/bin/etcdctl --endpoints=[%s] member list" \
+			cmd = "/usr/bin/etcdctl --endpoints=%s member list" \
 				% self._get_sysdb_endpoints()
 			(status, output) = sysdb.execute(cmd)
 			if status != 0:
@@ -115,7 +116,7 @@ class SysdbMgt:
 		if not end_points:
 			return False
 
-		cmd = "/usr/bin/etcdctl --endpoints=[%s] endpoint status" \
+		cmd = "/usr/bin/etcdctl --endpoints=%s endpoint status" \
 				% end_points.rstrip(',')
 		(status, output) = sysdb.execute(cmd)
 		if status != 0:
@@ -149,7 +150,7 @@ class SysdbMgt:
 		if not end_points:
 			return (-1, info)
 
-		cmd = "/usr/bin/etcdctl --endpoints=[%s] endpoint health" \
+		cmd = "/usr/bin/etcdctl --endpoints=%s endpoint health" \
 				% end_points.rstrip(',')
 		(status, output) = sysdb.execute(cmd)
 		if status != 0:
@@ -187,7 +188,7 @@ class SysdbMgt:
 		else:
 			node_info = output
 
-		cmd = "/usr/bin/etcdctl --endpoints=[%s] endpoint health" \
+		cmd = "/usr/bin/etcdctl --endpoints=%s endpoint health" \
 				% end_points.rstrip(',')
 		(status, output) = sysdb.execute(cmd)
 		if status != 0:
@@ -264,7 +265,7 @@ class SysdbMgt:
 		if status != 0:
 			return (-1, "get enable sysdb node: get nodes failed")
 
-		cmd = "/usr/bin/etcdctl --endpoints=[%s] member add %s --peer-urls=http://%s:2380" \
+		cmd = "/usr/bin/etcdctl --endpoints=%s member add %s --peer-urls=http://%s:2380" \
 				% (self._get_sysdb_endpoints(), self._get_sysdb_instance_name(ip), ip)
 		(status, output) = sysdb.execute(cmd)
 		if status != 0:
@@ -332,7 +333,7 @@ class SysdbMgt:
 		if not member_id:
 			return (-1, "get sysdb member id failed:%s" % ip)
 
-		cmd = "/usr/bin/etcdctl --endpoints=[%s] member remove %s" \
+		cmd = "/usr/bin/etcdctl --endpoints=%s member remove %s" \
 				% (self._get_sysdb_endpoints(), member_id)
 		(status, output) = sysdb.execute(cmd)
 		if status != 0:
@@ -499,7 +500,7 @@ class SysdbMgt:
 			(status, output) = self.get_sysdb_nodes()
 			if status != 0: 
 				# maybe in critical time, wait seconds and try 
-				self.log.syslog(syslog.LOG_INFO, "wait sysdb node ready:[%s],[%s],%d, %s, retry:%d" \
+				self.log.syslog(syslog.LOG_INFO, "wait sysdb node ready:%s,%s,%d, %s, retry:%d" \
 					% (cur_ips, add_ip, status, output, index))
 				continue
 				
@@ -512,14 +513,14 @@ class SysdbMgt:
 			if is_ready:
 				break
 
-			self.log.syslog(syslog.LOG_INFO, "wait sysdb node ready:[%s],[%s],%d, %s, retry:%d" \
+			self.log.syslog(syslog.LOG_INFO, "wait sysdb node ready:%s,%s,%d, %s, retry:%d" \
 				% (cur_ips, add_ip, status, output, index))
 
 		if is_ready:
-			self.log.syslog(syslog.LOG_INFO, "wait sysdb node ready:[%s],[%s],[%s] succsss" \
+			self.log.syslog(syslog.LOG_INFO, "wait sysdb node ready:%s,%s,%s succsss" \
 					% (cur_ips, add_ip, member_info.rstrip(',')))
 		else:
-			self.log.syslog(syslog.LOG_ERR, "wait sysdb node ready:[%s],[%s],[%s] failed" \
+			self.log.syslog(syslog.LOG_ERR, "wait sysdb node ready:%s,%s,%s failed" \
 					% (cur_ips, add_ip, member_info.rstrip(',')))
 
 		return is_ready 
