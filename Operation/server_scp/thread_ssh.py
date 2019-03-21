@@ -8,8 +8,10 @@ import ssh
 
 def service(ip):
     z = ssh.ssh_work(ip)
-    z.restart_es()
-    z.restart_api_server()
+    # z.unisntall_infinity()
+    z.install_infinity()
+    # z.restart_es()
+    # z.restart_api_server()
 
 if __name__=='__main__':
     ip_list = ["10.0.6.244","10.0.6.245","10.0.6.246"]

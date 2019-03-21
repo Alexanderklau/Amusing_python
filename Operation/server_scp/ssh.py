@@ -27,3 +27,10 @@ class ssh_work:
     def restart_api_server(self):
         infi_api = self.ssh_work("systemctl restart infi-api")
 
+
+    def install_infinity(self):
+        insatll_infi = self.ssh_work("bash /root//install.sh")
+
+    def unisntall_infinity(self):
+        uninstall_infi = self.ssh_work("bash /root/uninstall.sh")
+
