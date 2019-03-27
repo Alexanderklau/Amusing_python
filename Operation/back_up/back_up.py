@@ -229,10 +229,9 @@ if __name__ == "__main__":
         if sys.argv[1] == "back_up":
                 config = "setting.json"
                 node = sys.argv[2]
-                ipaddr = sys.argv[3]
                 back_up_file(config)
                 back_up_network()
-                back_up_disk(ipaddr)
+                back_up_disk(node)
                 back_up_ssh()
                 ceph_setting(node)
                 compress_file(node)
