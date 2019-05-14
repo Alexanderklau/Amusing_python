@@ -25,7 +25,7 @@ class ssh_work:
         es = self.ssh_work("systemctl stop elasticsearch")
 
     def rm_es(self):
-        es = self.ssh_work("systemctl stop elasticsearch && rm -rf /etc/elasticsearch/es_node.yml && rm -rf /etc/elasticsearch/elasticsearch.yml")
+        es = self.ssh_work("systemctl stop elasticsearch && rm -rf /etc/elasticsearch/es_node.yml && rm -rf /etc/elasticsearch/elasticsearch.yml && rm -rf /var/lib/elasticsearch/*")
         return es
 
 
@@ -34,7 +34,7 @@ class ssh_work:
 
 
     def install_infinity(self):
-        insatll_infi = self.ssh_work("bash /root//install.sh")
+        insatll_infi = self.ssh_work("bash /root/infinity-3.3.0/install.sh")
 
     def unisntall_infinity(self):
         uninstall_infi = self.ssh_work("bash /root/uninstall.sh")
