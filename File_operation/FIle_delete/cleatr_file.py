@@ -16,6 +16,7 @@ import os
 import time
 import datetime
 import psutil
+import sys
 
 
 def iter_files(rootDir):
@@ -58,7 +59,7 @@ def get_file_list(file_path):
 
 def delete_volume_file(file_path):
     for i in get_file_list(file_path):
-        print check_volume_info(file_path)
+        # print check_volume_info(file_path)
         if check_volume_info(file_path) < 70:
             break
         else:
@@ -72,6 +73,6 @@ def delete_180_file(file_path):
 
 
 if __name__ == '__main__':
-    file_path = ""
+    file_path = sys.argv[1]
     delete_180_file(file_path)
     delete_volume_file(file_path)
