@@ -83,8 +83,8 @@ def run(interval):
             logging.info("\n" + "CPU" + "\n" + check_cpu())
             logging.info("\n" + "Memory" + "\n" + check_memory())
             time.sleep(time_remaining)
-        except Exception, e:
-            print e
+        except Exception as e:
+            print (e)
 
 
 if __name__ == "__main__":

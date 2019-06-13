@@ -40,5 +40,12 @@ class ssh_work:
         uninstall_infi = self.ssh_work("bash /root/uninstall.sh")
 
     def clear_rabitmq(self):
-        ckear_infi = self.ssh_work("python /opt/infinity/python/apps/misc/rabbitmq/rabbitmq_utils.py")
+        clear_infi = self.ssh_work("python /opt/infinity/python/apps/misc/rabbitmq/rabbitmq_utils.py")
+
+    def back_up_Es_node_yml(self):
+        back_up = self.ssh_work("rm -rf /etc/elasticsearch/es_node.yml && mv /etc/elasticsearch/.es_node.yml /etc/elasticsearch/es_node.yml")
+
+
+
+
 
