@@ -18,7 +18,7 @@ class ssh_work:
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(hostname=self.hostname, port=self.port, username=self.username, password=self.password)
         stdin, stdout, stderr = ssh.exec_command(command)
-        print stderr.read()
+        print (stderr.read())
         ssh.close()
 
 
@@ -51,3 +51,5 @@ class ssh_work:
     def etcd_cover_up(self):
         etcd_cover_up= self.ssh_work("cd /root/back_up/tool && python back_up.py etcd_cover_up")
 
+    def scp_r(self, ip, node):
+        work = self.ssh_work("scp -r {ip} /etc/csync2.cfg root@{node}".format(ip=ip, node=node))

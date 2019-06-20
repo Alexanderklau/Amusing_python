@@ -45,7 +45,12 @@ class ssh_work:
     def back_up_Es_node_yml(self):
         back_up = self.ssh_work("rm -rf /etc/elasticsearch/es_node.yml && mv /etc/elasticsearch/.es_node.yml /etc/elasticsearch/es_node.yml")
 
+    def scp_r(self):
+        work = self.ssh_work("python /opt/infinity/python/apps/misc/rabbitmq/rabbitmq_utils.py")
+
+    def restart_rpc(self):
+        work = self.ssh_work("bash /root/infinity-3.3.0/upgrade.sh -d")
 
 
-
-
+    def clear_sysdb(self):
+        work = self.ssh_work("curl -X PATCH 'http://127.0.0.1:9531/clean'")
