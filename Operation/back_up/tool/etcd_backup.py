@@ -54,7 +54,7 @@ def read_config(config):
         temp = json.loads(f.read())
     return temp
 
-def dumpAllData(path="./back_up/etcd/"):
+def dumpAllData(path="./"):
     fKey = open(path + keyfile, "w")
     fData = open(path + kvfile, "w")
     for pre_key in keylist:
@@ -119,7 +119,7 @@ def getSysdbCluKey():
     return result
 
 
-def putAllData(path="./back_up/etcd/"):
+def putAllData(path="./"):
     cleanSysdb()
     (ret, key) = getEtcdkey(path + keyfile)
     (ret, info) = getEtcdinfo(path + kvfile)
@@ -143,11 +143,11 @@ def putAllData(path="./back_up/etcd/"):
         print putcmd + "\n" + "OK"
     print "导入etcd数据完成！"
     print "------------------------------"
-    # print "请输入需要重新添加的sysdb节点ip，以逗号分隔(如:10.0.7.21,10.0.7.22,10.0.7.23):"
-    # ips = raw_input()
+    print "请输入需要重新添加的sysdb节点ip，以逗号分隔(如:10.0.7.21,10.0.7.22,10.0.7.23):"
+    ips = raw_input()
     global ips
-    ip_config = read_config("ip.json")
-    ips = ip_config["add_ip"]
+    # ip_config = read_config("ip.json")
+    # ips = ip_config["add_ip"]
     cmd = cmdaddnode + ips
     (status, result) = execute(cmd)
     if status != 0:
@@ -224,9 +224,9 @@ def clearsysdbconf(ips):
 
 def cleanSysdb():
     global ips
-    ips = read_config("ip.json")
-    iplist = ips["clear_ip"]
-    clearsysdbconf(iplist)
+    print "输入要清除的sysdb节点"
+    ip_list = raw_input()
+    clearsysdbconf(ip_list)
     print "清除sysdb配置完成！"
 
 

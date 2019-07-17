@@ -18,15 +18,15 @@ def first_name(size=2, ln=None, fn=None):
     _lst = []
     for i in range(size):
         _item = random_name(1, fn)
-        print _item
+        print(_item)
         if ln:
             while _item in ln:
                 _item = random_name(1, fn)
             _lst.append(_item)
         else:
             _lst.append(_item)
-    print '----------------------------------'
-    print _lst
+    print ('----------------------------------')
+    print (_lst)
     return "".join(_lst)
 
 
@@ -37,7 +37,7 @@ def last_name(size=1, names=None):
 
 def full_name(lns, fns):
     _last = last_name(1, lns)
-    print _last
+    print (_last)
     return "{}{}".format(_last, first_name(random.randint(1, 2), _last, fns))
 
 
