@@ -1,27 +1,40 @@
 # coding: utf-8
 
-__author__ = "lau.wenbo"
+__author__ = 'Yemilice_lau'
 
 
-import smtplib
 from email.mime.text import MIMEText
+from email.header import Header
+from smtplib import SMTP_SSL
 
-msg_from = 'xxxxxxxxx@qq.com'  # 发送方邮箱
-passwd = 'abcdefghigklmnop'  # 填入发送方邮箱的授权码
-msg_to = 'xxxxx@foxmail.com'  # 收件人邮箱
 
-subject = "python邮件测试"  # 主题
-content = "这是我使用python smtplib及email模块发送的邮件"
-msg = MIMEText(content)
-msg['Subject'] = subject
-msg['From'] = msg_from
-msg['To'] = msg_to
-try:
-    s = smtplib.SMTP_SSL("smtp.qq.com", 465)
-    s.login(msg_from, passwd)
-    s.sendmail(msg_from, msg_to, msg.as_string())
-    print ("发送成功")
-except s.SMTPException, e:
-    print "发送失败"
-finally:
-    s.quit()
+#qq邮箱smtp服务器
+host_server = 'smtp.qq.com'
+#sender_qq为发件人的qq号码
+sender_qq = 'xxxxxxxxxxxx@qq.com'
+#pwd为qq邮箱的授权码
+pwd = 'xxxxxxxxxxx'
+#发件人的邮箱
+sender_qq_mail = 'xxxxxxxx@qq.com'
+#收件人邮箱
+receivers = ['1xxxxxxxxxx@163.com']
+
+#邮件的正文内容
+mail_content = 'Hello!Testing'
+#邮件标题
+mail_title = 'Email邮件测试'
+
+
+#ssl登录
+smtp = SMTP_SSL(host_server)
+#set_debuglevel()是用来调试的。参数值为1表示开启调试模式，参数值为0关闭调试模式
+smtp.set_debuglevel(1)
+smtp.ehlo(host_server)
+smtp.login(sender_qq, pwd)
+
+msg = MIMEText(mail_content, "plain", 'utf-8')
+msg["Subject"] = Header(mail_title, 'utf-8')
+msg["From"] = sender_qq_mail
+msg["To"] = Header("接收者测试", 'utf-8') ## 接收者的别名
+smtp.sendmail(sender_qq_mail, receivers, msg.as_string())
+smtp.quit()
