@@ -3,7 +3,7 @@
 __author__ = "lau.wenbo"
 
 
-from checksum import create_checksum
+from checksum import create_checksum,file_md5
 from diskwalk import diskwalk
 from os.path import getsize
 import csv
@@ -17,7 +17,7 @@ def findDupes(path):
     files = d.paths()
     for file in files:
         try:
-            compound_key = (getsize(file),create_checksum(file))
+            compound_key = (getsize(file),file_md5(file))
             if compound_key in record:
                 dup[file] = record[compound_key]
             else:
@@ -34,5 +34,5 @@ if __name__ == '__main__':
         header = ["源文件", "重复文件"]
         writer = csv.DictWriter(csvfile, fieldnames=header)
         writer.writeheader()
-        for file in  findDupes("/Users/yemilice/Desktop/work").items():
+        for file in  findDupes("/Users/yemilice/").items():
             writer.writerow({"源文件":file[1],"重复文件":file[0]})
