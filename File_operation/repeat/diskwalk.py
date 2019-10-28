@@ -14,3 +14,5 @@ class diskwalk(object):
         path_collection = (os.path.join(root,fn) for root,dirs,files in os.walk(path) for fn in files)
         return path_collection
 
+
+
