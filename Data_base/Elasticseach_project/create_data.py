@@ -12,25 +12,30 @@ fake = Faker(locale='zh_CN')
 # name = fake.name()
 # address = fake.city()
 
-es = Elasticsearch(hosts="10.0.7.127",port=9200)
+es = Elasticsearch(hosts="10.0.6.247",port=9200)
 
 def work():
     actions = []
 
     # f = open('monlog.log')
     i = 1
-    for line in range(1,10000):
+    for line in range(1,4):
         try:
             action = {
-                "_index": "user",
+                "_index": "user_tt",
                 "_type": "message",
                 "_source": {
                     "name":fake.name(),
-                    "address":fake.city()
+                    "address":fake.city(),
+                    "message":{
+                        "from":fake.street_name(),
+                        "province":fake.province()
+                    }
                 }
             }
         except:
             continue
+        print action
         i += 1
         actions.append(action)
 
