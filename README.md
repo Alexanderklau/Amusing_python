@@ -176,3 +176,7 @@
 
 ### 2019.12.02 update
 1. 更新网易云ncm转换为mp3脚本（operation）
+
+### 2020.05.19 update
+1. 实现一个高并发的框架脚本 （Thread_work）
+2. 实现一个队列多线程并发模式 （Thread_work）
