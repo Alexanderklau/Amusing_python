@@ -180,3 +180,8 @@
 ### 2020.05.19 update
 1. 实现一个高并发的框架脚本 （Thread_work）
 2. 实现一个队列多线程并发模式 （Thread_work）
+
+### 2020.05.21 update
+1. 实现一个协程异步IO逻辑 （Thread_work）
+2. 实现一个协程并发框架 （Thread_work）
+3. 实现一个并发遍历文件夹的测试脚本 （Thread_work）
