@@ -189,3 +189,7 @@
 ### 2020.05.24 update
 1. 实现一个合并列表／连接列表的脚本
 
+### 2020.06.10 update
+1. 更新一个TCP端口扫描器（Python_Safe）
+2. 更新一个NMAP端口扫描器 （Python_Safe）
+3. 构建一个SSH僵尸网络 （Python_Safe）
