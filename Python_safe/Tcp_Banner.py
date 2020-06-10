@@ -12,9 +12,9 @@ def connScan(tgtHost, tgtPort):
         connSkt = socket(AF_INET, SOCK_STREAM)
         connSkt.connect((tgtHost, tgtPort))
         connSkt.send('ViolentPython\r\n')
-        reesults = connSkt.recv(100)
+        results = connSkt.recv(100)
         print('[+]%d/tcp' % tgtPort)
-        print('[+] ' + str(reesults))
+        print('[+] ' + str(results))
         connSkt.close()
     except:
         print('[-]%d/tcp close' % tgtPort)
