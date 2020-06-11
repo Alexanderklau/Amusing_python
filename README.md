@@ -193,3 +193,8 @@
 1. 更新一个TCP端口扫描器（Python_Safe）
 2. 更新一个NMAP端口扫描器 （Python_Safe）
 3. 构建一个SSH僵尸网络 （Python_Safe）
+
+### 2020.06.11 update
+1. 更新一个多线程的TCP端口扫描器 （Python_Safe)
+2. 更新一个NMAP的端口扫描器
+3. 更新一个SSh暴力连接的脚本
