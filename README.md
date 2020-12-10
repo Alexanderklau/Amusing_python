@@ -221,3 +221,6 @@
 1. 更新一个多线程并发模型（Thread_work）
 2. 更新一个多进程并发模型 (Thread_work)
 3. 更新一个协程并发模型 (Thread_work)
+
+### 2020.12.10 update
+1. 添加一个selenium的自动化测试项目(operation)
