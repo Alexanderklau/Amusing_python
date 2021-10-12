@@ -26,6 +26,6 @@ def line_buffered(f):
             line_buf = ''
 
 for l in line_buffered(stdout):
-    print l
+    print(l)
 
 ssh.close()
