@@ -81,13 +81,13 @@ function log4Check(){
 						#获取jar包的中版本号，1-2-3中的2
 						zbb=`echo $name4 | awk -F "." '{print$2}'`
 
-						if [[ "$dbb" = 2  &&  "$zbb" -lt 17 ]];then
+						if [[ "$dbb" = 2  &&  "$zbb" -lt 16 ]];then
 							echo "发现相关包存在风险:"
 							echo $i/$name3
 							temp="1"
       			fi
       			
-      			if [[ "$dbb" = 2  &&  "$zbb" = 17 ]];then
+      			if [[ "$dbb" = 2  &&  "$zbb" = 16 ]];then
 							temp="2"
       			fi
 					done
