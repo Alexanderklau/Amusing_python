@@ -31,8 +31,7 @@ function log4Update(){
 						#获取jar的名称(不带版本号)
 						name2=`echo $name3 | awk -F "-2" '{print$1}'`
 						if [[ "$dbb" = 2  ]];then
-							echo "==============="
-							for s in $(ls $(cd "$(dirname "$0")"; pwd)/log4j2-15)
+							for s in $(ls $(cd "$(dirname "$0")"; pwd)/log4j2-17)
 								do
 									name4_s=`echo $s | awk -F "-" '{print$NF}'`
 									dbb_s=`echo $name4_s | awk -F "." '{print$1}'`
@@ -40,12 +39,12 @@ function log4Update(){
 									name3_s=`echo $s | awk -F "-2" '{print$1}'`
 									if [ "$name2" = "$name3_s" ] && [ "$dbb" = "$dbb_s" ] && [ "$zbb" -lt "$zbb_s" ];then
 										echo "正在替换中。。。"
-										echo "cp $(cd "$(dirname "$0")"; pwd)/log4j2-15/$name3_s-$name4_s $i/" >> replace.log
+										echo "cp $(cd "$(dirname "$0")"; pwd)/log4j2-17/$name3_s-$name4_s $i/" >> replace.log
 										mkdir -p $i/bak
 										mv  $i/$name2-$name4 $i/bak/$name2-$name4.bak
-										cp $(cd "$(dirname "$0")"; pwd)/log4j2-15/$name3_s-$name4_s $i/
+										cp $(cd "$(dirname "$0")"; pwd)/log4j2-17/$name3_s-$name4_s $i/
 										chown $user:$group $i/$name3_s-$name4_s
-										chmod 777 $i/$name3_s-$name4_s
+										chmod 644 $i/$name3_s-$name4_s
 									fi
 								 done
 						fi
@@ -82,13 +81,13 @@ function log4Check(){
 						#获取jar包的中版本号，1-2-3中的2
 						zbb=`echo $name4 | awk -F "." '{print$2}'`
 
-						if [[ "$dbb" = 2  &&  "$zbb" -lt 15 ]];then
+						if [[ "$dbb" = 2  &&  "$zbb" -lt 17 ]];then
 							echo "发现相关包存在风险:"
 							echo $i/$name3
 							temp="1"
       			fi
       			
-      			if [[ "$dbb" = 2  &&  "$zbb" = 15 ]];then
+      			if [[ "$dbb" = 2  &&  "$zbb" = 17 ]];then
 							temp="2"
       			fi
 					done
